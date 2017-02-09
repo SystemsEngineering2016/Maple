@@ -12,4 +12,8 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
+  create_table "Test", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "firstname", limit: 30, null: false
+  end
+
 end

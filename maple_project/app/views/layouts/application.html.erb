@@ -19,18 +19,43 @@ a:hover{
 a:active{
     color: green;
 }
+body {
+  background-color: white;
+}
     </STYLE>
   </head>
 
   <body>
     <div id="content">
       <!-- Write your page content  here -->
-      <p>MAPLE PRJECT</p>
-      <button type="button" style="float: right;color:black" > <%= link_to 'Mapping', controller: 'map' %></button>
-      <button type="button" style="float: right;"> <%= link_to 'Maintaining', controller: 'maintain' %></button>
-      <button type="button" style="float: right;"> <%= link_to 'Uploading', controller: 'load' %></button>
-      <button type="button" style="float: right;"> <%= link_to 'View Systems', controller: 'systems' %></button>
-      <button type="button" style="float: right;"> <%= link_to 'Home page', controller: 'home_page' %></button>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Maple</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><%= link_to 'Home page', controller: 'home_page' %></li>
+
+
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to 'Mapping', controller: 'map' %></li>
+              <li><%= link_to 'Maintaining', controller: 'maintain' %></li>
+              <li><%= link_to 'Uploading', controller: 'load' %></li>
+              <li><%= link_to 'View Systems', controller: 'systems' %></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
       <p>Developers: Pius, Matt and Pierce</p>
 
       <%= yield %>
