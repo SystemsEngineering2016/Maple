@@ -12,11 +12,11 @@
     <div id="content">
       <!-- Write your page content  here -->
       <p>MAPLE PRJECT</p>
-      <button type="button" style="float: right;" onclick="alert('Hello world!')">Mapping</button>
-      <button type="button" style="float: right;" onclick="alert('Hello world!')">Maintaining</button>
-      <button type="button" style="float: right;" onclick="alert('Hello world!')">Uploading</button>
-            <button type="button" style="float: right;"> <%= link_to 'Home page', controller: 'home_page' %></button>
-
+      <button type="button" style="float: right;">Mapping</button>
+      <button type="button" style="float: right;">Maintaining</button>
+      <button type="button" style="float: right;">Uploading</button>
+      <button type="button" style="float: right;"> <%= link_to 'Your data dictionaries', controller: 'home_page' %></button>
+      <button type="button" style="float: right;"> <%= link_to 'Home page', controller: 'home_page' %></button>
       <p>Developers: Pius, Matt and Pierce</p>
 
       <%= yield %>
