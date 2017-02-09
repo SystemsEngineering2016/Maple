@@ -1,4 +1,4 @@
 class LoadController < ApplicationController
-  def new
+  def index
   end
 end

@@ -1,4 +1,4 @@
 class MapController < ApplicationController
-  def new
+  def index
   end
 end
