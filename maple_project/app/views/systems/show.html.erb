@@ -1,9 +1,17 @@
 <div class = "jumbotron">
-  <p>
+  <h2 align="center">You have uploaded the following System </h2>
+  <br>
+  <br>
+  <p align="center">
     <strong>System name:</strong>
     <%= @system.System_Name %>
   </p>
-  <p>
+  <p align="center">
     <strong>System version:</strong>
     <%= @system.System_Version %>
   </p>
+  <br>
+  <p align="center">
+  <%= link_to 'Systems list', controller: 'systems' %>
+  </p>
+</div>
