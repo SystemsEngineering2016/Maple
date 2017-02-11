@@ -10,35 +10,30 @@
     <strong>System version:</strong>
     <%= @system.System_Version %>
   </p>
-
+  <p align="center">
+    <strong>Table Name:</strong>
+    <%= System.table_name %>
+  </p>
+  <p align="center">
+    <strong>Column Details:</strong>
+    <%= System.columns %>
+  </p>
 
   <br>
-  <table class="table table-hover">
+  <table align="center" width="100%">
     <tr>
       <th>Table Name</th>
       <th>Variable Name</th>
       <th>Type</th>
-      <th>Type Details</th>
-      <th>Limit</th>
-      <th>Comment</th>
-
-
     </tr>
-    <% for i in 0..@system.tableLength() %>
+    <% @system.variableName().each do |system| %>
     <tr>
         <td><%= @system.tableName()%></td>
-        <td><%= @system.variableName(i) %></td>
-        <td><%= @system.variableType(i) %></td>
-        <td><%= @system.sqlType(i) %></td>
-        <td><%= @system.limit(i) %></td>
-        <td><%= @system.comment(i) %></td>
-
-
-
+        <td><%= @system.variableName() %></td>
+        <td><%= @system.variableName() %></td>
       </tr>
       <% end %>
     </table>
-    <br>
   <p align="center">
   <%= link_to 'Systems list', controller: 'systems' %>
   </p>

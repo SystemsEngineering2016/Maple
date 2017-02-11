@@ -1,10 +1,14 @@
 class SystemsController < ApplicationController
+  include SystemsHelper
+
   def index
    @systems = System.all
  end
 
   def show
+    @systems = System.all
     @system = System.find(params[:id])
+
   end
 
   def new
