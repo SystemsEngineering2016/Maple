@@ -28,12 +28,20 @@ class System < ApplicationRecord
 
   def limit(i)
     names = System.columns
-    return names.at(i).limit
+    if names.at(i).limit != nil then
+      return names.at(i).limit
+    else
+      return "Null"
+    end
   end
 
   def comment(i)
     names = System.columns
-    return names.at(i).comment
+    if names.at(i).limit != nil then
+      return names.at(i).comment
+    else
+      return "Null"
+    end
   end
 
 
