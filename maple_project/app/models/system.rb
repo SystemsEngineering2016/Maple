@@ -2,8 +2,8 @@ class System < ApplicationRecord
   self.table_name
   self.columns
 
-  validates :System_Name, presence: true,length: { minimum: 2 }
-  validates :System_Version, presence: true,length: { minimum: 2 }
+  validates :System_Name, presence: true,length: { minimum: 1 }
+  validates :System_Version, presence: true,length: { minimum: 1 }
 
 
   def tableLength()
