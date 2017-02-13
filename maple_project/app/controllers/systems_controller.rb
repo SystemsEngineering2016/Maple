@@ -3,24 +3,45 @@ class SystemsController < ApplicationController
 
   def index
    @systems = System.all
- end
+  end
 
   def show
     @systems = System.all
     @system = System.find(params[:id])
-
   end
 
   def new
+    @system = System.new
+  end
+
+  def edit
+  @system  = System.find(params[:id])
   end
 
   def create
-    #Strong parameters
-    @system = System.new(params.require(:system).permit(:System_Name, :System_Version))
+    #Strong parameters.
+    @system = System.new(system_params)
 
-    #article.save is responsible for saving the model in the database.
-    @system.save
-    redirect_to @system
+    if @system.save
+      redirect_to @system
+    else
+      render 'new'
+    end
   end
 
+  def update
+    @system = System.find(params[:id])
+
+    if @system.update(system_params)
+      redirect_to @system
+    else
+      render 'edit'
+    end
+  end
+
+
+  private
+    def system_params
+      params.require(:system).permit(:System_Name, :System_Version)
+    end
 end

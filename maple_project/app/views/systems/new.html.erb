@@ -2,26 +2,44 @@
   <h1 align="center"> Add new Systems</h1>
   <p align="center">Upload your system data dictionaries here</p>
 
+
   <%= form_for :system, url: systems_path do |f| %>
-  <p align=center>
-    <%= f.label :System_Name %><br>
-    <%= f.text_field :System_Name %>
+
+    <% if @system.errors.any? %>
+      <div id="error_explanation">
+        <h3 style="color:red" align="center">
+          <%= pluralize(@system.errors.count, "error") %> prohibited
+          this system from being saved:
+        </h3>
+        <ul style="color:red" >
+          <% @system.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <p align="center">
+      <%= f.label :System_Name %><br>
+      <%= f.text_field :System_Name %>
+    </p>
+
+    <p align="center">
+      <%= f.label :System_Version%><br>
+      <%= f.text_area :System_Version %>
+    </p>
+
+    <p align="center">
+      <%= f.submit %>
+    </p>
+
+  <% end %>
+  </br>
+  <p align="center">
+    <%= link_to 'Systems list', controller: 'systems' %>
+  </p>
+  <p align="center">
+    <%= link_to 'Back', systems_path %>
   </p>
 
-  <p align=center>
-    <%= f.label :System_Version %><br>
-    <%= f.text_area :System_Version %>
-  </p>
-
-  <p align=center>
-    <%= f.submit %>
-  </p>
-<% end %>
-</br>
-<p align="center">
-<%= link_to 'Systems list', controller: 'systems' %>
-</p>
-<p align="center">
-<%= link_to 'Back', systems_path %>
-</p>
 </div>

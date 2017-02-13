@@ -32,14 +32,14 @@
         <td><%= @system.sqlType(i) %></td>
         <td><%= @system.limit(i) %></td>
         <td><%= @system.comment(i) %></td>
+    </tr>
 
-
-
-      </tr>
       <% end %>
     </table>
     <br>
   <p align="center">
-  <%= link_to 'Systems list', controller: 'systems' %>
+  <%= link_to 'Systems list', controller: 'systems' %> |
+  <%= link_to 'Edit', edit_system_path(@system) %> |
+  <%= link_to 'Back', systems_path %>
   </p>
 </div>
