@@ -39,6 +39,13 @@ class SystemsController < ApplicationController
     end
   end
 
+  def destroy
+  @system = System.find(params[:id])
+  @system.destroy
+
+  redirect_to systems_path
+  end
+
 
   private
     def system_params
