@@ -1,3 +1,10 @@
 <div class = "jumbotron">
   <h1 align="center"> Uploading Page</h1>
+<p align="center">Choose the system</p>
+ <p align="center">
+
+<%= select_tag(:city_id, options_for_select([['Lisbon', 1], ['Madrid', 2], ['Maple3', 3] ])) %>
+    <!-- The option value integer value below is what will be submitted to your controller.
+    Often this will be the id of a corresponding database object  -->
+</p>
 </div>
