@@ -5,10 +5,14 @@
     <br>
     <tr>
       <th>System Name</th>
+      <th>Created at</th>
+      <th>Updated last at</th>
     </tr>
     <% @systems.each do |system| %>
     <tr>
         <td><%= system.System_Name %></td>
+        <td><%= system.created_at %></td>
+        <td><%= system.updated_at %></td>
         <td><%= link_to 'Show', system_path(system) %></td>
         <td><%= link_to 'Edit', edit_system_path(system) %></td>
         <td><%= link_to 'Delete', system_path(system),method: :delete,data: { confirm: 'Are you sure?' } %></td>
