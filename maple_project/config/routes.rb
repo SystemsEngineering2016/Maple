@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get 'home_page/index'
-  resources :systems
+  resources :systems  do
+    resources :versions
+  end
+
   get 'load/index'
   get 'maintain/index'
   get 'map/index'
