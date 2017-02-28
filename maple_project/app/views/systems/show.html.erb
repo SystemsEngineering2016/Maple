@@ -1,45 +1,14 @@
 <div class = "jumbotron">
-  <h2 align="center">You have uploaded the following System </h2>
-  <br>
-  <br>
-  <p align="center">
-    <strong>System name:</strong>
-    <%= @system.System_Name %>
-  </p>
-  <p align="center">
-    <strong>System version:</strong>
-    <%= @system.System_Version %>
-  </p>
 
-
-  <br>
-  <table class="table table-hover">
-    <tr>
-      <th>Table Name</th>
-      <th>Variable Name</th>
-      <th>Type</th>
-      <th>Type Details</th>
-      <th>Limit</th>
-      <th>Comment</th>
-
-
-    </tr>
-    <% for i in 0..@system.tableLength() %>
-    <tr>
-        <td><%= @system.tableName()%></td>
-        <td><%= @system.variableName(i) %></td>
-        <td><%= @system.variableType(i) %></td>
-        <td><%= @system.sqlType(i) %></td>
-        <td><%= @system.limit(i) %></td>
-        <td><%= @system.comment(i) %></td>
-    </tr>
-
-      <% end %>
-    </table>
     <br>
-  <p align="center">
-  <%= link_to 'Systems list', controller: 'systems' %> |
-  <%= link_to 'Edit', edit_system_path(@system) %> |
-  <%= link_to 'Back', systems_path %>
-  </p>
+    <br>
+    <p align="center">
+      <strong>The following system has been created:  </strong>
+      <%= @system.System_Name %>
+    </p>
+    <p align="center">
+      <%= link_to 'Systems list', controller: 'systems' %> |
+      <%= link_to 'Edit', edit_system_path(@system) %> |
+      <%= link_to 'Back', systems_path %>
+    </p>
 </div>
