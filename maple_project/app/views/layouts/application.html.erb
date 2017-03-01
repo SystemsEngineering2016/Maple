@@ -51,8 +51,9 @@ body {
               <li><%= link_to 'Mapping dictionaries', controller: 'map' %></li>
               <li><%= link_to 'Maintain dictionaries', controller: 'maintain' %></li>
               <!-- <li><%= link_to 'Uploading', new_system_path %></li> -->
-              <li><%= link_to 'Upload dictionaries', controller: 'load' %></li>
-              <li><%= link_to 'View Versions', controller: 'systems' %></li>
+              <!-- <li><%= link_to 'Upload dictionaries', controller: 'load' %></li> -->
+              <li><%= link_to 'Create Versions', create_version_path %></li>
+              <li><%= link_to "View Versions", version_view_path%></li>
               <li><%= link_to 'View Systems', controller: 'systems' %></li>
             </ul>
           </div><!--/.nav-collapse -->

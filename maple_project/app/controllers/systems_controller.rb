@@ -12,8 +12,8 @@ end
   end
 
   def edit
-  @system = System.find(params[:id])
-end
+    @system = System.find(params[:id])
+  end
 
   def create
     @system = System.new(system_params)
@@ -36,16 +36,22 @@ end
   end
 
 
-def destroy
-  @system = System.find(params[:id])
-  @system.destroy
+  def destroy
+    @system = System.find(params[:id])
+    @system.destroy
 
-  redirect_to systems_path
-end
+    redirect_to systems_path
+  end
 
   private
   def system_params
     params.require(:system).permit(:System_Name)
+  end
+
+  def version_view
+  end
+  def create_version
+    @systems = System.all
   end
 
 end
