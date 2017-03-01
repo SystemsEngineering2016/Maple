@@ -1,0 +1,8 @@
+<h2 align="center">Versions</h2>
+  <% @system.versions.each do |version| %>
+    <p align="center">
+      <strong>Versions:</strong>
+      <%= version.Version_Name %>
+      <%= link_to 'Destroy Version', [version.system, version],method: :delete,data: { confirm: 'Are you sure?' } %>
+    </p>
+  <% end %>

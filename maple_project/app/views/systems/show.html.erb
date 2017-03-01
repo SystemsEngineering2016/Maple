@@ -7,25 +7,12 @@
       <%= @system.System_Name %>
     </p>
 
-    <h2 align="center">Versions</h2>
-      <% @system.versions.each do |version| %>
-        <p align="center">
-          <strong>Versions:</strong>
-          <%= version.Version_Name %>
-        </p>
-      <% end %>
+    <%= render @system.versions %>
 
     <h5 align="center">Add a version:</h2>
-    <%= form_for([@system, @system.versions.build]) do |f| %>
-      <p align="center">
-        <%= f.label :Version_Name %><br>
-        <%= f.text_field :Version_Name %>
-      </p>
-      <p align="center">
-        <%= f.submit %>
-      </p>
-    <% end %>
+    <%= render 'versions/form' %>
     <br>
+
     <p align="center">
       <%= link_to 'Systems list', controller: 'systems' %> |
       <%= link_to 'Edit', edit_system_path(@system) %> |

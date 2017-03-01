@@ -1,0 +1,9 @@
+<%= form_for([@system, @system.versions.build]) do |f| %>
+  <p align="center">
+    <%= f.label :Version_Name %><br>
+    <%= f.text_field :Version_Name %>
+  </p>
+  <p align="center">
+    <%= f.submit %>
+  </p>
+<% end %>
