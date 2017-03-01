@@ -2,14 +2,34 @@
 
     <br>
     <br>
+    <br>
+
     <p align="center">
-      <strong>The following system has been created:  </strong>
-      <%= @system.System_Name %>
+      <strong>Below is a list of all versions for System "<%= @system.System_Name %>"</strong>
     </p>
+    <table align="center" width="80%">
+      <br>
+      <tr>
+        <th>System</th>
+        <th>Version</th>
+        <th>Version Created at</th>
+        <th>Verison Updated at</th>
+      </tr>
+      <% @system.versions.each do |version| %>
+        <tr>
+            <td><%= @system.System_Name %></td>
+            <td><%= version.Version_Name %></td>
+            <td><%= version.created_at %></td>
+            <td><%= version.updated_at %></td>
+            <td><%= link_to 'Destroy Version', [version.system, version],method: :delete,data: { confirm: 'Are you sure?' } %></td>
 
-    <%= render @system.versions %>
+        </tr>
+      <% end %>
+    </table>
+    <br>
+    <br>
 
-    <h5 align="center">Add a version:</h2>
+    <h2 align="center">Add a new version to system <%= @system.System_Name %> below</h2>
     <%= render 'versions/form' %>
     <br>
 

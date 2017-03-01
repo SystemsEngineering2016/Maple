@@ -48,10 +48,11 @@ body {
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to 'Mapping', controller: 'map' %></li>
-              <li><%= link_to 'Maintaining', controller: 'maintain' %></li>
+              <li><%= link_to 'Mapping dictionaries', controller: 'map' %></li>
+              <li><%= link_to 'Maintain dictionaries', controller: 'maintain' %></li>
               <!-- <li><%= link_to 'Uploading', new_system_path %></li> -->
-              <li><%= link_to 'Uploading', controller: 'load' %></li>
+              <li><%= link_to 'Upload dictionaries', controller: 'load' %></li>
+              <li><%= link_to 'View Versions', controller: 'systems' %></li>
               <li><%= link_to 'View Systems', controller: 'systems' %></li>
             </ul>
           </div><!--/.nav-collapse -->
