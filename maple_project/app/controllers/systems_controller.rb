@@ -7,6 +7,10 @@ end
   @system = System.find(params[:id])
   end
 
+  def showVersions
+  @system = System.find(params[:id])
+  end
+
   def new
     @system = System.new
   end
@@ -14,6 +18,7 @@ end
   def edit
     @system = System.find(params[:id])
   end
+  
   def version_view
     @systems = System.all
 
