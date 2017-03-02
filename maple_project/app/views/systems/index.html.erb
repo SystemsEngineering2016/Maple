@@ -13,9 +13,8 @@
         <td><%= system.System_Name %></td>
         <td><%= system.created_at %></td>
         <td><%= system.updated_at %></td>
-        <td><%= link_to 'Show Versions', system_path(system) %></td>
+        <td><%= link_to 'Show System', system_path(system) %></td>
         <td><%= link_to 'Edit System', edit_system_path(system) %></td>
-
         <td><%= link_to 'Delete System', system_path(system),method: :delete,data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% end %>
@@ -23,13 +22,13 @@
     <br>
     <br>
     <p align="center">
-      <!-- <%= link_to 'Create A New System', new_system_path %> -->
+      <%= link_to 'Create A New System', new_system_path %>
     </p>
     <br>
     <br>
     <br>
     <p align="center">
-      <!-- <%= link_to "Create a new version ", create_version_path %>|
-      <%= link_to "Click to view list of all Versions", version_view_path %> -->
+
+      <!-- <%= link_to "Click to view list of all Versions", version_view_path %> -->
     </p>
   </div>

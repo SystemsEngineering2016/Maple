@@ -1,4 +1,12 @@
 class VersionsController < ApplicationController
+  def new
+    @system = System.find(params[:system_id])
+  end
+
+  def show
+    @system = System.find(params[:system_id])
+  end
+
   def create
     @system = System.find(params[:system_id])
     @version = @system.versions.create(version_params)

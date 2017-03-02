@@ -18,11 +18,11 @@ end
   def edit
     @system = System.find(params[:id])
   end
-  
+
   def version_view
     @systems = System.all
-
   end
+
   def create
     @system = System.new(system_params)
 
@@ -58,7 +58,7 @@ end
 
 
   def create_version
-    @systems = System.all
+     @systems = System.all
   end
 
 end

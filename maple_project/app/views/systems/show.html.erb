@@ -1,12 +1,7 @@
 <div class = "jumbotron">
 
-    <br>
-    <br>
-    <br>
-
-    <p align="center">
-      <strong>Below is a list of all versions for System "<%= @system.System_Name %>"</strong>
-    </p>
+    <h2 align="center">System <%= @system.System_Name %></h2>
+    <p align="center">Below is a list of all versions for System "<%= @system.System_Name %>"</p>
     <table align="center" width="80%">
       <br>
       <tr>
@@ -30,13 +25,15 @@
     <br>
 
 
-    <h2 align="center">Add a new version to system <%= @system.System_Name %> below</h2>
+    <!-- <h2 align="center">Add a new version to system <%= @system.System_Name %> below</h2>
     <%= render 'versions/form' %>
-    <br>
+    <br> -->
 
     <p align="center">
       <%= link_to 'Systems list', controller: 'systems' %> |
-      <%= link_to 'Edit', edit_system_path(@system) %> |
+      <%= link_to 'Edit System Name', edit_system_path(@system) %> |
+      <!-- <%= link_to 'Show Versions', system_version_path(@system) %> | -->
+      <%= link_to 'Create New Version', new_system_version_path(@system) %> |
       <%= link_to 'Back', systems_path %>
     </p>
 </div>

@@ -2,16 +2,15 @@
   <h1 align="center">Create a new version</h1>
   <p align="center">Select from the systems below to create a new version of it</p>
   <br>
-  <table align="center" width="50%" >
+  <table align="center" >
     <br>
     <tr>
       <th>System Name</th>
     </tr>
     <% System.all.each do |system| %>
     <tr>
-        <td><%= system.System_Name %></td>
-        <td><%= link_to 'View Versions', system_path(system) %></td>
-        <td><%= link_to 'Create New Version', system_path(system) %></td>
+        <td align="center"><%= system.System_Name %></td>
+        <td align="right"><%= link_to 'Create a new version', new_system_version_path(system) %></td>
       </tr>
       <% end %>
     </table>
