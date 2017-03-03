@@ -9,13 +9,20 @@
       <th>System Updated at</th>
     </tr>
     <% @systems.each do |system| %>
+
     <tr>
         <td><%= system.System_Name %></td>
         <td><%= system.created_at %></td>
         <td><%= system.updated_at %></td>
-        <td><%= link_to 'Show System', system_path(system) %></td>
-        <td><%= link_to 'Edit System', edit_system_path(system) %></td>
-        <td><%= link_to 'Delete System', system_path(system),method: :delete,data: { confirm: 'Are you sure?' } %></td>
+        <td><div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Options
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li> <%= link_to 'Show System', system_path(system) %> </li>
+              <li><%= link_to 'Edit System', edit_system_path(system) %></li>
+              <li><%= link_to 'Delete System', system_path(system),method: :delete,data: { confirm: 'Are you sure?' } %></li>
+            </ul>
+          </div> </td>
       </tr>
       <% end %>
     </table>

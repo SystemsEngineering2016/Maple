@@ -16,3 +16,17 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+
+ .btn-primary {
+   background-color: #8F9696;
+   border:0px solid transparent; /* this was 1px earlier */
+
+ }
+
+ .top-buffer { margin-top:20px; }
+
+ table {
+     border-collapse: separate;
+     border-spacing: 0 1em;
+ }
