@@ -30,10 +30,9 @@
     <br> -->
 
     <p align="center">
-      <%= link_to 'Systems list', controller: 'systems' %> |
+      <%= link_to 'Systems list', systems_path %> |
       <%= link_to 'Edit System Name', edit_system_path(@system) %> |
       <!-- <%= link_to 'Show Versions', system_version_path(@system) %> | -->
       <%= link_to 'Create New Version', new_system_version_path(@system) %> |
-      <%= link_to 'Back', systems_path %>
     </p>
 </div>
