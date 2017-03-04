@@ -1,11 +1,7 @@
 <div class = "jumbotron">
-  <h1 align="center">List of all verions</h1>
-  <p align="center">Below is a list of all versions</p>
-  <br>
-  <br>
-  <br>
+  <h1 align="center">View Versions</h1>
 
-  <table align="center" >
+  <!-- <table align="center" >
     <br>
     <tr>
       <th>System Name</th>
@@ -13,11 +9,30 @@
     <% @systems.each do |system| %>
     <tr>
         <td><%= system.System_Name %></td>
-        <td><%= link_to 'Show Versions', system_path(system) %></td>
-        <!-- <td><%= link_to 'Create a new version', new_system_version_path(system) %></td> -->
+        <td><%= link_to system.System_Name, system_path(system) %></td>
+
       </tr>
       <% end %>
-    </table>
 
+    </table> -->
+    <table align="center" >
+      <br>
+      <tr>
+        <th>Please choose a System from the dropdown below to view all its versions:</th>
+      </tr>
+
+      <tr>
+          <td>    <div class="dropdown" align="center">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">List of Systems
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu" align="center">
+                    <% @systems.each do |system| %>
+                    <li> <%= link_to system.System_Name, system_path(system) %> </li>
+                    <% end %>
+                  </ul>
+                </div></td>
+        </tr>
+
+      </table>
 
 </div>
