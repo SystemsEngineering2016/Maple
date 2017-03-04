@@ -15,14 +15,12 @@
       <% end %>
 
     </table> -->
-    <table align="center" >
       <br>
-      <tr>
-        <th>Please choose a System from the dropdown below to view all its versions:</th>
-      </tr>
 
-      <tr>
-          <td>    <div class="dropdown" align="center">
+
+                <div class="dropdown">
+                  <p>Please choose a System from the dropdown below to view all its versions:</p>
+
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">List of Systems
                   <span class="caret"></span></button>
                   <ul class="dropdown-menu" align="center">
@@ -30,9 +28,8 @@
                     <li> <%= link_to system.System_Name, system_path(system) %> </li>
                     <% end %>
                   </ul>
-                </div></td>
-        </tr>
+                </div>
 
-      </table>
+
 
 </div>
