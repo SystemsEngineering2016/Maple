@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   resources :systems  do
     resources :versions
   end
+
+  resources :versions  do
+    resources :tables
+  end
   get 'load/index'
   get 'maintain/index'
   get 'map/index'

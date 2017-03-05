@@ -19,8 +19,9 @@
 
 
  .btn-primary {
-   background-color: #8F9696;
+   background-color: #6A9D9D;
    border:0px solid transparent; /* this was 1px earlier */
+   font-size: 25px;
 
  }
 
@@ -30,6 +31,7 @@
      border-collapse: separate;
      border-spacing: 0 1em;
  }
- .dropdown {text-align:center;}
- .button, .dropdown-menu {margin:10px auto}
+.dropdown {text-align:center;}
+ .button,  .dropdown-menu {margin:10px auto}
  .dropdown-menu {width:200px; left:50%; margin-left:-100px;}
+#id1.dropdown-menu {font-size: 25px;}

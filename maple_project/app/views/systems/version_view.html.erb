@@ -23,7 +23,7 @@
 
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">List of Systems
                   <span class="caret"></span></button>
-                  <ul class="dropdown-menu" align="center">
+                  <ul class="dropdown-menu" id="id1" align="center">
                     <% @systems.each do |system| %>
                     <li> <%= link_to system.System_Name, system_path(system) %> </li>
                     <% end %>

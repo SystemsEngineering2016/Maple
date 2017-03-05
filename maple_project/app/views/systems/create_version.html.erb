@@ -21,9 +21,9 @@
            <div class="dropdown">
              <p>Please choose a System from the dropdown below to create a new version:</p>
 
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">List of Systems
+                <button class="btn btn-primary dropdown-toggle" id="id2" type="button" data-toggle="dropdown">List of Systems
                   <span class="caret"></span></button>
-                  <ul class="dropdown-menu" align="center">
+                  <ul class="dropdown-menu" id="id1" align="center">
                     <% System.all.each do |system| %>
                     <li> <%= link_to system.System_Name, new_system_version_path(system) %> </li>
                     <% end %>
