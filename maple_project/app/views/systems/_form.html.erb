@@ -1,6 +1,5 @@
 
   <%= form_for @system do |f| %>
-
   <% if @system.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -20,10 +19,6 @@
     <%= f.text_field :System_Name %>
   </p>
 
-  <p align="center">
-    <%= f.label :System_Version %><br>
-    <%= f.text_area :System_Version %>
-  </p>
 
   <p align="center">
     <%= f.submit %>

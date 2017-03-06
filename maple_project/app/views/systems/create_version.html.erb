@@ -1,0 +1,34 @@
+<div class = "jumbotron">
+  <h1 align="center">Create a new version</h1>
+  <p align="center">Select from the systems below to create a new version of it</p>
+  <br>
+  <!-- <table align="center" >
+    <br>
+    <tr>
+      <th>System Name</th>
+    </tr>
+    <% System.all.each do |system| %>
+    <tr>
+        <td align="center"><%= system.System_Name %></td>
+        <td align="right"><%= link_to 'Create a new version', new_system_version_path(system) %></td>
+      </tr>
+      <% end %>
+    </table> -->
+      <br>
+
+
+
+           <div class="dropdown">
+             <p>Please choose a System from the dropdown below to create a new version:</p>
+
+                <button class="btn btn-primary dropdown-toggle"  type="button" data-toggle="dropdown">List of Systems
+
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu" id="id1" align="center">
+                    <% System.all.each do |system| %>
+                    <li> <%= link_to system.System_Name, new_system_version_path(system) %> </li>
+                    <% end %>
+                  </ul>
+                </div>
+
+</div>

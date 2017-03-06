@@ -1,53 +1,5 @@
 class System < ApplicationRecord
-  self.table_name
-  self.columns
-
-  validates :System_Name, presence: true,length: { minimum: 1 }
-  validates :System_Version, presence: true,length: { minimum: 1 }
-
-
-  def tableLength()
-    names = System.columns
-    return names.length - 1
-  end
-
-  def tableName()
-    return System.table_name
-  end
-
-  def variableName(i)
-    names = System.columns
-    return names.at(i).name
-  end
-
-  def variableType(i)
-    names = System.columns
-    return names.at(i).type
-  end
-
-  def sqlType(i)
-    names = System.columns
-    return names.at(i).sql_type
-  end
-
-  def limit(i)
-    names = System.columns
-    if names.at(i).limit != nil then
-      return names.at(i).limit
-    else
-      return "Null"
-    end
-  end
-
-  def comment(i)
-    names = System.columns
-    if names.at(i).limit != nil then
-      return names.at(i).comment
-    else
-      return "Null"
-    end
-  end
-
-
-
+  has_many :versions, dependent: :destroy
+  validates_presence_of :System_Name, :message => "must be provided. Please try again. "
+  validates_uniqueness_of :System_Name, :message => "has already been taken. Please choose a new name. (System names are not case sensitive).",:case_sensitive => false
 end
