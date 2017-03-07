@@ -1,8 +1,8 @@
 class TablesController < ApplicationController
   def create
-  @version = Version.find(params[:version_id])
-  @table = @version.tables.create(table_params)
-  redirect_to version_path(@version)
+    @version = Version.find(params[:version_id])
+    @table = @version.tables.new(table_params)
+    redirect_to version_path(@version)
 end
 
 private

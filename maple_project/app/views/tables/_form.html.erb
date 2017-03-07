@@ -1,0 +1,18 @@
+<%= form_for([@system, @system.tables.build]) do |f| %>
+  <p align="center">
+    <%= f.label :Table_Name %><br>
+    <%= f.text_field :Table_Name %>
+  </p>
+  <p align="center">
+    <%= f.label :Column_Name %><br>
+    <%= f.text_field :Column_Name %>
+  </p>
+  <p align="center">
+    <%= f.label :Data_Type %><br>
+    <%= f.text_field :Data_Type%>
+  </p>
+  <br>
+  <p align="center">
+    <%= f.submit %>
+  </p>
+<% end %>
