@@ -29,6 +29,14 @@ end
     end
   end
 
+
+  def upload
+    uploaded_io = params[:system][:csvFile]
+    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+      file.write(uploaded_io.read)
+    end
+  end
+
   def update
   @system = System.find(params[:id])
 
