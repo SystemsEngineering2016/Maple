@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'home_page/index'
-  resources :systems  do
+  resources :systems, shallow: true do
     resources :versions do
       resources :tables
     end

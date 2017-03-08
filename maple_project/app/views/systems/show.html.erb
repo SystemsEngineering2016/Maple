@@ -16,7 +16,9 @@
             <td><%= version.Version_Name %></td>
             <td><%= version.created_at %></td>
             <td><%= version.updated_at %></td>
-            <td><%= link_to 'Delete Version', [version.system, version],method: :delete,data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Delete Version', version_path(version),method: :delete,data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Create Table', new_version_table_path(version) %></td>
+            <td><%= link_to 'Show Table', version_path(version) %></td>
 
         </tr>
       <% end %>
@@ -32,7 +34,6 @@
     <p align="center">
       <%= link_to 'Systems list', systems_path %> |
       <%= link_to 'Edit System Name', edit_system_path(@system) %> |
-      <!-- <%= link_to 'Show Versions', system_version_path(@system) %> | -->
-      <%= link_to 'Create New Version', new_system_version_path(@system) %> 
+      <%= link_to 'Create New Version', new_system_version_path(@system) %>
     </p>
 </div>

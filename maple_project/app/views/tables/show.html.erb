@@ -1,0 +1,18 @@
+<div class = "jumbotron">
+  <h1 align="center">Show table "<%= @version.Version_Name %>"</h1>
+
+<h2>Add a table:</h2>
+<%= form_for([@version, @version.tables.build]) do |f| %>
+  <p>
+    <%= f.label :Table_Name%><br>
+    <%= f.text_field :Table_Name %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
+</div>

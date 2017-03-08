@@ -1,11 +1,10 @@
 class VersionsController < ApplicationController
   def new
-
     @system = System.find(params[:system_id])
   end
 
   def show
-    @system = System.find(params[:system_id])
+    @version = Version.find(params[:id])
   end
 
   def create
@@ -15,10 +14,10 @@ class VersionsController < ApplicationController
   end
 
   def destroy
-  @system = System.find(params[:system_id])
-  @version = @system.versions.find(params[:id])
+  @version = Version.find(params[:id])
   @version.destroy
   redirect_to system_path(@system)
+
 end
 
   private

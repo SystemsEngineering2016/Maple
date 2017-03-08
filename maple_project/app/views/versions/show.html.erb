@@ -1,28 +1,45 @@
 <div class = "jumbotron">
-  <h1 align="center">Show versions</h1>
+  <h1 align="center">Show tables</h1>
   <p align="center">
-    <strong>Below is a list of all versions for System "<%= @system.System_Name %>"</strong>
+    <strong>Below is a list of all tables for Version "<%= @version.Version_Name %>"</strong>
   </p>
   <table align="center" width="80%">
     <br>
     <tr>
-      <th>System</th>
       <th>Version</th>
-      <th>Version Created at</th>
-      <th>Verison Updated at</th>
+      <th>Table name</th>
+      <th>Column name</th>
+      <th>Data type</th>
+      <th>Display Width</th>
+      <th>Display Height</th>
+      <th>Display Promput</th>
+      <th>Display_Short_Prompt</th>
+      <th>Implementation Comment</th>
+
     </tr>
-    <% @system.versions.each do |version| %>
+    <% @version.table.each do |table| %>
       <tr>
-          <td><%= @system.System_Name %></td>
-          <td><%= version.Version_Name %></td>
-          <td><%= version.created_at %></td>
-          <td><%= version.updated_at %></td>
-          <td><%= link_to 'Delete Version', [version.system, version],method: :delete,data: { confirm: 'Are you sure?' } %></td>
+          <td><%= @version.Version_Name %></td>
+          <td><%= table.Table_Name %></td>
+          <td><%= table.Column_Name %></td>
+          <td><%= table.Data_Type %></td>
+          <td><%= table.Display_Width %></td>
+          <td><%= table.Display_Height %></td>
+          <td><%= table.Display_Prompt %></td>
+          <td><%= table.Display_Short_Prompt %></td>
+          <td><%= table.Implementation_Comment %></td>
+          <td><%= link_to 'Delete Table', table_path(table),method: :delete,data: { confirm: 'Are you sure?' } %></td>
 
       </tr>
     <% end %>
   </table>
+
+
   <br>
   <br>
-  <p align="center"><%= link_to 'Back', systems_path %></p>
+  <p align="center">
+    <%= link_to 'Create Table', new_version_table_path(@version) %>
+  </p>
+
+
 </div>
