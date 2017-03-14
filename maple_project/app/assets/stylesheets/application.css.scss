@@ -25,12 +25,38 @@
 
  }
 
+body {
+  padding: 100px;
+  background-color: #9DB0DA;
+}
+
+.jumbotron {
+  background-color: #D5E1FA;
+  border-radius: 25px;
+}
+
+.navbar {
+  background-color: #D5E1FA;
+}
+
+.dropdown-menu {
+  background-color: #D5E1FA;
+
+}
  .top-buffer { margin-top:20px; }
 
  table {
      border-collapse: separate;
      border-spacing: 0 1em;
  }
+
+
+
+ .table-hover {
+  margin-left:auto;
+  margin-right:auto;
+  width: 60%;
+}
 .dropdown {text-align:center;}
  .button,  .dropdown-menu {margin:10px auto}
  .dropdown-menu {width:200px; left:50%; margin-left:-100px;}

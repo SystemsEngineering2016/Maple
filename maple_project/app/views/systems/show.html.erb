@@ -1,24 +1,20 @@
+<body>
+
 <div class = "jumbotron">
 
-    <h2 align="center">System <%= @system.System_Name %></h2>
-    <p align="center">Below is a list of all versions for System "<%= @system.System_Name %>"</p>
-    <table align="center" width="80%">
+    <h2 align="center">Versions of <%= @system.System_Name %></h2>
+    <table class="table table-hover"align="center" width="80%">
       <br>
       <tr>
-        <th>System</th>
-        <th>Version</th>
-        <th>Version Created at</th>
-        <th>Verison Updated at</th>
       </tr>
+      <p align = "center"><%= link_to '<i class="glyphicon glyphicon-plus"></i> '.html_safe, new_system_version_path(@system), class: 'btn btn-custom' %> </p>
+
       <% @system.versions.each do |version| %>
         <tr>
-            <td><%= @system.System_Name %></td>
-            <td><%= version.Version_Name %></td>
-            <td><%= version.created_at %></td>
-            <td><%= version.updated_at %></td>
-            <td><%= link_to 'Delete Version', version_path(version),method: :delete,data: { confirm: 'Are you sure?' } %></td>
-            <td><%= link_to 'Create Table', new_version_table_path(version) %></td>
-            <td><%= link_to 'Show Table', version_path(version) %></td>
+            <td><%= link_to version.Version_Name,  version_path(version)%></td>
+            <td> <%= link_to '<i class="glyphicon glyphicon-edit"></i> '.html_safe, new_version_table_path(version), class: 'btn btn-custom' %>
+            <%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, version_path(version),method: :delete,data: { confirm: 'Are you sure?' } , class: 'btn btn-custom' %> </td>
+
 
         </tr>
       <% end %>
@@ -30,10 +26,5 @@
     <!-- <h2 align="center">Add a new version to system <%= @system.System_Name %> below</h2>
     <%= render 'versions/form' %>
     <br> -->
-
-    <p align="center">
-      <%= link_to 'Systems list', systems_path %> |
-      <%= link_to 'Edit System Name', edit_system_path(@system) %> |
-      <%= link_to 'Create New Version', new_system_version_path(@system) %>
-    </p>
 </div>
+</body>
