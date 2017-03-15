@@ -16,7 +16,7 @@ class VersionsController < ApplicationController
   def destroy
   @version = Version.find(params[:id])
   @version.destroy
-  redirect_to system_path(@system)
+  redirect_to systems_path
 
 end
 
