@@ -1,3 +1,5 @@
+<body>
+
 <div class = "jumbotron">
   <h2 align="center">Add a new version to System "<%= @system.System_Name %>" below</h2>
   <br>
@@ -12,7 +14,9 @@
       <%= f.submit %>
     </p>
   <% end %>
+
   <br>
   <br>
   <p align="center"><%= link_to 'List of Versions for this system', system_path(@system) %></p>
 </div>
+</body>

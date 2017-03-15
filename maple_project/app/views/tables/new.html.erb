@@ -1,0 +1,61 @@
+<body>
+
+<div class = "jumbotron">
+  <h1 align="center">Add a Data Point for version "<%= @version.Version_Name %>"</h1>
+  <%= form_for([@version, @version.table.build]) do |f| %>
+    <p align="center">
+
+      <%= f.hidden_field :Table_Name, :value => "123"%>
+    </p>
+    <p align="center">
+      <%= f.label :Column_Name %><br>
+      <%= f.text_field :Column_Name %>
+    </p>
+    <p align="center">
+      <%= f.label :Data_Type %><br>
+      <%= f.text_field :Data_Type %>
+    </p>
+    <br>
+    <p align="center">
+      <%= f.submit %>
+    </p>
+  <% end %>
+
+
+
+  <!-- <table class="table table-hover">
+  <tr>
+    <th>Table Name</th>
+    <th>Variable Name</th>
+    <th>Variable Type</th>
+    <th>Display Witdth</th>
+    <th>Display Height</th>
+    <th>Display Prompt</th>
+    <th>Display Short Prompt</th>
+    <th>Implementation Comment</th>
+
+
+
+  </tr>
+  <% for i in 0..@version.getLen()-1 %>
+  <tr>
+      <td>Maple</td>
+      <td><%= @version.getColNames()[i] %></td>
+      <td><%= @version.getTypes[i] %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>NA</td>
+
+  </tr>
+
+    <% end %>
+  </table> -->
+
+
+
+
+
+</div>
+</body>

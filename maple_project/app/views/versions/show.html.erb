@@ -1,28 +1,55 @@
+<body>
+
 <div class = "jumbotron">
-  <h1 align="center">Show versions</h1>
-  <p align="center">
-    <strong>Below is a list of all versions for System "<%= @system.System_Name %>"</strong>
-  </p>
+  <h1 align="center">Data Point Display</h1>
+
+  <table align="center" style="width:50%">
+  <tr>
+    <td><b>System:</b>...</td>
+    <td><b>Version:</b> <%= @version.Version_Name %></td>
+  </tr>
+</table>
+</br>
+
+
   <table align="center" width="80%">
     <br>
     <tr>
-      <th>System</th>
       <th>Version</th>
-      <th>Version Created at</th>
-      <th>Verison Updated at</th>
-    </tr>
-    <% @system.versions.each do |version| %>
-      <tr>
-          <td><%= @system.System_Name %></td>
-          <td><%= version.Version_Name %></td>
-          <td><%= version.created_at %></td>
-          <td><%= version.updated_at %></td>
-          <td><%= link_to 'Delete Version', [version.system, version],method: :delete,data: { confirm: 'Are you sure?' } %></td>
+      <th>Table name</th>
+      <th>Column name</th>
+      <th>Data type</th>
+      <th>Display Width</th>
+      <th>Display Height</th>
+      <th>Display Prompt</th>
+      <th>Display_Short_Prompt</th>
+      <th>Implementation Comment</th>
 
+    </tr>
+    <% @version.table.each do |table| %>
+      <tr>
+          <td><%= @version.Version_Name %></td>
+          <td><%= table.Table_Name %></td>
+          <td><%= table.Column_Name %></td>
+          <td><%= table.Data_Type %></td>
+          <td><%= table.Display_Width %></td>
+          <td><%= table.Display_Height %></td>
+          <td><%= table.Display_Prompt %></td>
+          <td><%= table.Display_Short_Prompt %></td>
+          <td><%= table.Implementation_Comment %></td>
+          <!-- <td><%= link_to 'Delete Data Point', table_path(table),method: :delete,data: { confirm: 'Are you sure?' } %></td> -->
+          <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, table_path(table),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' %> </td>
       </tr>
     <% end %>
   </table>
+
+
   <br>
   <br>
-  <p align="center"><%= link_to 'Back', systems_path %></p>
+  <p align="center">
+    <%= link_to 'Add a New Data Point', new_version_table_path(@version) %>
+  </p>
+
+
 </div>
+</body>

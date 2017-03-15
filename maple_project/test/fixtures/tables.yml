@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Table_Name: MyString
+  Column_Name: MyString
+  Data_Type: MyString
+  Display_Width: 1
+  Display_Height: 1
+  Display_Prompt: MyString
+  Display_Short_Prompt: MyString
+  Implementation_Comment: MyText
+  version: one
+
+two:
+  Table_Name: MyString
+  Column_Name: MyString
+  Data_Type: MyString
+  Display_Width: 1
+  Display_Height: 1
+  Display_Prompt: MyString
+  Display_Short_Prompt: MyString
+  Implementation_Comment: MyText
+  version: two
