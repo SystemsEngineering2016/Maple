@@ -12,7 +12,7 @@
 </br>
 
 
-  <table align="center" width="80%">
+  <table class="table table-hover" align="center" width="80%">
     <br>
     <tr>
       <th>Version</th>
@@ -29,7 +29,7 @@
     <% @version.table.each do |table| %>
       <tr>
           <td><%= @version.Version_Name %></td>
-          <td><%= table.Table_Name %></td>
+          <td> <a href="#" data-xeditable="true" id="Column_Name" data-type="text" data-resource="post" data-name="Column_Name" data-url="/update/1" data-original-title="Enter username"><%= table.Table_Name %> </a> </td>
           <td><%= table.Column_Name %></td>
           <td><%= table.Data_Type %></td>
           <td><%= table.Display_Width %></td>

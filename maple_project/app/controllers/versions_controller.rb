@@ -13,6 +13,20 @@ class VersionsController < ApplicationController
     redirect_to system_path(@system)
   end
 
+  def update
+  @version =  Version.find(params[:id])
+
+  respond_to do |format|
+    if @version.update_attributes(params[:post])
+      format.html { redirect_to @version, notice: 'Post was successfully updated.' }
+      format.json { head :no_content } # 204 No Content
+    else
+      format.html { render action: "edit" }
+      format.json { render json: @version.errors, status: :unprocessable_entity }
+    end
+  end
+end
+
   def destroy
   @version = Version.find(params[:id])
   @version.destroy
