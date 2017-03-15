@@ -1,10 +1,17 @@
 <body>
 
 <div class = "jumbotron">
-  <h1 align="center">Show tables</h1>
-  <p align="center">
-    <strong>Below is a list of all tables for Version "<%= @version.Version_Name %>"</strong>
-  </p>
+  <h1 align="center">Data Point Display</h1>
+
+  <table align="center" style="width:50%">
+  <tr>
+    <td><b>System:</b> ...</td>
+    <td><b>Version:</b> <%= @version.Version_Name %></td>
+  </tr>
+</table>
+</br>
+
+
   <table align="center" width="80%">
     <br>
     <tr>
@@ -30,8 +37,8 @@
           <td><%= table.Display_Prompt %></td>
           <td><%= table.Display_Short_Prompt %></td>
           <td><%= table.Implementation_Comment %></td>
-          <td><%= link_to 'Delete Table', table_path(table),method: :delete,data: { confirm: 'Are you sure?' } %></td>
-
+          <!-- <td><%= link_to 'Delete Data Point', table_path(table),method: :delete,data: { confirm: 'Are you sure?' } %></td> -->
+          <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, table_path(table),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' %> </td>
       </tr>
     <% end %>
   </table>
@@ -40,7 +47,7 @@
   <br>
   <br>
   <p align="center">
-    <%= link_to 'Create Table', new_version_table_path(@version) %>
+    <%= link_to 'Add a New Data Point', new_version_table_path(@version) %>
   </p>
 
 

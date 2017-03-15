@@ -16,7 +16,7 @@ end
 def destroy
 @table = Table.find(params[:id])
 @table.destroy
-redirect_to systems_path
+redirect_to system_path
 
 end
 

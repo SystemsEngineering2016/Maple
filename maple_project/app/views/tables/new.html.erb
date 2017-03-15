@@ -1,7 +1,7 @@
 <body>
 
 <div class = "jumbotron">
-  <h1 align="center">Create a table "<%= @version.Version_Name %>"</h1>
+  <h1 align="center">Add a Data Point for version "<%= @version.Version_Name %>"</h1>
   <%= form_for([@version, @version.table.build]) do |f| %>
     <p align="center">
 
@@ -23,7 +23,7 @@
 
 
 
-  <table class="table table-hover">
+  <!-- <table class="table table-hover">
   <tr>
     <th>Table Name</th>
     <th>Variable Name</th>
@@ -51,7 +51,7 @@
   </tr>
 
     <% end %>
-  </table>
+  </table> -->
 
 
 
