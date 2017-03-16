@@ -1,7 +1,16 @@
 <body>
 <div class = "jumbotron">
   <h1 align="center">Edit this Version</h1>
-  <%= render 'form' %>
-  <p align="center"><%= link_to 'Back', systems_path %></p>
+  <%= form_for :version, url: version_path(@version), method: :patch do |f| %>
+  <p align="center">
+    <%= f.label :Version_Name %><br>
+    <%= f.text_field :Version_Name %>
+  </p>
+  <br>
+  <p align="center">
+    <%= f.submit %>
+  </p>
+
+<% end %>
 </div>
 </body>

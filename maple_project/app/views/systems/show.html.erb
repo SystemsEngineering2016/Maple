@@ -13,8 +13,11 @@
       <% @system.versions.each do |version| %>
         <tr>
             <td><%= link_to version.Version_Name,  version_path(version)%></td>
-            <td> <%= link_to '<i class="glyphicon glyphicon-edit"></i> '.html_safe, new_version_table_path(version), class: 'btn btn-custom' %>
-            <%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, version_path(version),method: :delete,data: { confirm: 'Are you sure?' } , class: 'btn btn-custom' %> </td>
+            <!-- <%= link_to '<i class="glyphicon glyphicon-edit"></i> '.html_safe, new_version_table_path(version), class: 'btn btn-custom' %> -->
+            <td>
+            <%= link_to '<i class="glyphicon glyphicon-edit"></i> '.html_safe, edit_version_path(version), class: 'btn btn-custom' %>
+            <%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, version_path(version),method: :delete,data: { confirm: 'Are you sure?' } , class: 'btn btn-custom' %>
+          </td>
 
 
         </tr>
