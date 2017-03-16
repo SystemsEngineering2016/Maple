@@ -19,15 +19,6 @@ class VersionsController < ApplicationController
     redirect_to system_path(@system)
   end
 
-  def update
-  @version = Version.find(params[:id])
-
-  if @version.update(version_params)
-    redirect_to @version
-  else
-    render 'edit'
-  end
-end
 
   def destroy
   @version = Version.find(params[:id])

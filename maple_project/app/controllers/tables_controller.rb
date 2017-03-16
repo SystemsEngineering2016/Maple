@@ -7,11 +7,48 @@ class TablesController < ApplicationController
       @version = Version.find(params[:version_id])
   end
 
+  def edit
+    @version = Version.find(params[:id])
+  end
+
+
+
   def create
     @version = Version.find(params[:version_id])
     @table = @version.table.create(table_params)
     redirect_to version_path(@version)
 end
+
+
+
+
+def update
+
+  @version = Version.find(params[:id])
+
+
+
+respond_to do |format|
+
+    if @version.table.update(params[table_params])
+
+
+      format.html { redirect_to @version.table, notice: 'PartInfo was successfully updated.' }
+
+      format.json { head :no_content }
+
+    else
+
+      format.html { render action: "edit" }
+
+      format.json { render json: @version.table.errors, status: :unprocessable_entity }
+
+    end
+
+end
+
+end
+
 
 def destroy
 @table = Table.find(params[:id])

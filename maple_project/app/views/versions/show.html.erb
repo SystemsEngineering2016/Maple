@@ -27,14 +27,18 @@
     </tr>
     <% @version.table.each do |table| %>
       <tr>
-          <td><%= table.Table_Name %> </td>
-          <td> <a href="#myModal"  data-toggle="modal" data-target="#myModal"> <%= table.Column_Name %> </a></td>
-          <td><%= table.Data_Type %></td>
-          <td><%= table.Display_Width %></td>
-          <td><%= table.Display_Height %></td>
-          <td><%= table.Display_Prompt %></td>
-          <td><%= table.Display_Short_Prompt %></td>
-          <td><%= table.Implementation_Comment %></td>
+          <td> <%= best_in_place table, :Table_Name %> </td>
+          <td> <%= best_in_place table, :Column_Name %> </td>
+          <td> <%= best_in_place table, :Data_Type %> </td>
+          <td> <%= best_in_place table, :Display_Width %> </td>
+          <td> <%= best_in_place table, :Display_Height %> </td>
+          <td> <%= best_in_place table, :Display_Prompt %> </td>
+          <td> <%= best_in_place table, :Display_Short_Prompt %> </td>
+          <td> <%= best_in_place table, :Implementation_Comment %> </td>
+
+
+
+
           <!-- <td><%= link_to 'Delete Data Point', table_path(table),method: :delete,data: { confirm: 'Are you sure?' } %></td> -->
 
           <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, table_path(table),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' %> </td>
