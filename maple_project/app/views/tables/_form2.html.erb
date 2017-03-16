@@ -1,0 +1,19 @@
+<%= form_for([@version, @version.table.build]) do |f| %>
+  <p align="center">
+
+    <%= f.hidden_field :Table_Name, :value => "123"%>
+  </p>
+  <!-- <p align="center">
+    <%= f.label :Data_Type %><br>
+    <%= f.text_field :Data_Type %>
+  </p> -->
+  <br>
+  <p align="center">
+    <!-- <p align = "center"><%= link_to '<i class="glyphicon glyphicon-plus"></i> '.html_safe, f.submit, class: 'btn btn-custom' %> </p> -->
+
+    <p align = "center"> <%= button_tag(type: "submit", class: 'btn btn-custom1', name: "commit", value: "conceal") do %>
+  <span class="glyphicon glyphicon-plus"></span>
+<% end %> </p>
+
+  </p>
+<% end %>

@@ -15,7 +15,6 @@
   <table class="table table-hover" align="center" width="80%">
     <br>
     <tr>
-      <th>Version</th>
       <th>Table name</th>
       <th>Column name</th>
       <th>Data type</th>
@@ -28,9 +27,8 @@
     </tr>
     <% @version.table.each do |table| %>
       <tr>
-          <td><%= @version.Version_Name %></td>
-          <td> <a href="#" data-xeditable="true" id="Column_Name" data-type="text" data-resource="post" data-name="Column_Name" data-url="/update/1" data-original-title="Enter username"><%= table.Table_Name %> </a> </td>
-          <td><%= table.Column_Name %></td>
+          <td><%= table.Table_Name %> </td>
+          <td> <a href="#myModal"  data-toggle="modal" data-target="#myModal"> <%= table.Column_Name %> </a></td>
           <td><%= table.Data_Type %></td>
           <td><%= table.Display_Width %></td>
           <td><%= table.Display_Height %></td>
@@ -38,16 +36,43 @@
           <td><%= table.Display_Short_Prompt %></td>
           <td><%= table.Implementation_Comment %></td>
           <!-- <td><%= link_to 'Delete Data Point', table_path(table),method: :delete,data: { confirm: 'Are you sure?' } %></td> -->
+
           <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, table_path(table),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' %> </td>
       </tr>
     <% end %>
   </table>
+
+  <%= render "tables/form2", :version => @version %>
+
+
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <%= render "tables/form", :version => @version %>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 
   <br>
   <br>
   <p align="center">
     <%= link_to 'Add a New Data Point', new_version_table_path(@version) %>
+
   </p>
 
 

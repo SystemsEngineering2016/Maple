@@ -8,17 +8,6 @@ class TablesController < ApplicationController
   end
 
   def create
-    @post = Post.find(params[:id])
-
- respond_to do |format|
-   if @post.update_attributes(params[:post])
-     format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-     format.json { head :no_content } # 204 No Content
-   else
-     format.html { render action: "edit" }
-     format.json { render json: @post.errors, status: :unprocessable_entity }
-   end
- end
     @version = Version.find(params[:version_id])
     @table = @version.table.create(table_params)
     redirect_to version_path(@version)

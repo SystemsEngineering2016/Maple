@@ -7,6 +7,12 @@ class VersionsController < ApplicationController
     @version = Version.find(params[:id])
   end
 
+  def edit
+  @version = Version.find(params[:id])
+  end
+
+
+
   def create
     @system = System.find(params[:system_id])
     @version = @system.versions.create(version_params)
@@ -14,16 +20,12 @@ class VersionsController < ApplicationController
   end
 
   def update
-  @version =  Version.find(params[:id])
+  @version = Version.find(params[:id])
 
-  respond_to do |format|
-    if @version.update_attributes(params[:post])
-      format.html { redirect_to @version, notice: 'Post was successfully updated.' }
-      format.json { head :no_content } # 204 No Content
-    else
-      format.html { render action: "edit" }
-      format.json { render json: @version.errors, status: :unprocessable_entity }
-    end
+  if @version.update(version_params)
+    redirect_to @version
+  else
+    render 'edit'
   end
 end
 
