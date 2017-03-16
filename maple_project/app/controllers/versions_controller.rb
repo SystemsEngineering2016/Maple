@@ -1,6 +1,7 @@
 class VersionsController < ApplicationController
   def new
     @system = System.find(params[:system_id])
+    @version = Version.new
   end
 
   def show
@@ -16,12 +17,15 @@ class VersionsController < ApplicationController
   def create
     @system = System.find(params[:system_id])
     @version = @system.versions.create(version_params)
-    redirect_to system_path(@system)
+    if @version.save
+      redirect_to @version
+    else
+      render 'new'
+    end
   end
 
   def update
   @version = Version.find(params[:id])
-
   if @version.update(version_params)
     redirect_to @version
   else
