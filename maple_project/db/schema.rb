@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317144158) do
+ActiveRecord::Schema.define(version: 20170317185747) do
 
   create_table "systems", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "System_Name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170317144158) do
     t.string   "Short_Name"
     t.string   "Table_Name"
     t.integer  "Column_Name"
+    t.string   "Data_Type"
     t.integer  "Display_Width"
     t.string   "Display_Height"
     t.string   "Display_Prompt"
