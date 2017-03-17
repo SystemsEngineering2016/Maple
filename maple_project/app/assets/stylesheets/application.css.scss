@@ -58,8 +58,24 @@ body {
      text-align: center;
  }
 
+ .modal .modal-dialog {
+   width: 90%;
 
+ }
+ .modal-header {
+   background-color: #D5E1FA;
 
+ }
+
+ .modal-dialog .modal-footer {
+   background-color: #D5E1FA;
+
+ }
+ .modal .modal-body {
+   overflow-y: auto;
+   background-color: #D5E1FA;
+
+ }
  .table-hover {
   margin-left:auto;
   margin-right:auto;
