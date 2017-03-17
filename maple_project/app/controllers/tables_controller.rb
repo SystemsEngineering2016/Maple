@@ -8,7 +8,8 @@ class TablesController < ApplicationController
   end
 
   def edit
-    @table = @version.table.find(params[:id])
+    # @table = @version.table.find(params[:id])
+    @table = Table.find(params[:id])
   end
 
 
@@ -24,28 +25,32 @@ end
 
 def update
 
-  @version = Version.find(params[:id])
+  @table = Table.find(params[:id])
+  if @table.update(table_params)
+    redirect_to @table
+  else
+    render 'edit'
+  end
 
 
-
-respond_to do |format|
-
-    if @version.table.update(params[table_params])
-
-
-      format.html { redirect_to @version.table, notice: 'PartInfo was successfully updated.' }
-
-      format.json { head :no_content }
-
-    else
-
-      format.html { render action: "edit" }
-
-      format.json { render json: @version.table.errors, status: :unprocessable_entity }
-
-    end
-
-end
+# respond_to do |format|
+#
+#     if @version.table.update(params[table_params])
+#
+#
+#       format.html { redirect_to @version.table, notice: 'PartInfo was successfully updated.' }
+#
+#       format.json { head :no_content }
+#
+#     else
+#
+#       format.html { render action: "edit" }
+#
+#       format.json { render json: @version.table.errors, status: :unprocessable_entity }
+#
+#     end
+#
+# end
 
 end
 
