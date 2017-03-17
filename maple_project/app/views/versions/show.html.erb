@@ -27,14 +27,16 @@
     </tr>
     <% @version.table.each do |table| %>
       <tr>
+          <td> <%= best_in_place table, :Longest_Name %> </td>
+          <td> <%= best_in_place table, :Short_Name %> </td>
           <td> <%= best_in_place table, :Table_Name %> </td>
           <td> <%= best_in_place table, :Column_Name %> </td>
-          <td> <%= best_in_place table, :Data_Type %> </td>
           <td> <%= best_in_place table, :Display_Width %> </td>
           <td> <%= best_in_place table, :Display_Height %> </td>
           <td> <%= best_in_place table, :Display_Prompt %> </td>
-          <td> <%= best_in_place table, :Display_Short_Prompt %> </td>
           <td> <%= best_in_place table, :Implementation_Comment %> </td>
+
+
 
 
 
