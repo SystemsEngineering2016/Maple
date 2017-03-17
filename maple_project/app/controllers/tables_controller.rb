@@ -8,7 +8,7 @@ class TablesController < ApplicationController
   end
 
   def edit
-    @version = Version.find(params[:id])
+    @table = @version.table.find(params[:id])
   end
 
 

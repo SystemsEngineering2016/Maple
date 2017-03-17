@@ -15,7 +15,7 @@ class VersionsController < ApplicationController
 
   def create
     @system = System.find(params[:system_id])
-    @version = @system.versions.create(version_params)
+    @version = @system.versions.create(params(version_params))
     redirect_to system_path(@system)
   end
 
