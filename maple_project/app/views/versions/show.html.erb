@@ -5,23 +5,23 @@
 
   <table align="center" style="width:50%">
   <tr>
-    <td><b>System:</b>...</td>
-    <td><b>Version:</b> <%= @version.Version_Name %></td>
+    <td><p><b>System:</b>...</p></td>
+    <td><p><b>Version:</b> <%= @version.Version_Name %></p></td>
   </tr>
 </table>
-</br>
-
 
   <table class="table table-hover" align="center" width="80%">
     <br>
     <tr>
-      <th>Table name</th>
-      <th>Column name</th>
+      <th>Logical Name</th>
+      <th>Short Name</th>
+      <th>Table Name</th>
+      <th>Column Name</th>
       <th>Data type</th>
       <th>Display Width</th>
       <th>Display Height</th>
       <th>Display Prompt</th>
-      <th>Display_Short_Prompt</th>
+
       <th>Implementation Comment</th>
 
     </tr>
@@ -31,6 +31,7 @@
           <td> <%= best_in_place table, :Short_Name %> </td>
           <td> <%= best_in_place table, :Table_Name %> </td>
           <td> <%= best_in_place table, :Column_Name %> </td>
+          <td> <%= best_in_place table, :Data_Type %> </td>
           <td> <%= best_in_place table, :Display_Width %> </td>
           <td> <%= best_in_place table, :Display_Height %> </td>
           <td> <%= best_in_place table, :Display_Prompt %> </td>
