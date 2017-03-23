@@ -23,6 +23,7 @@
       <th>Display Prompt</th>
 
       <th>Implementation Comment</th>
+      <th>Active</th>
 
     </tr>
     <% @version.table.each do |table| %>
@@ -43,8 +44,9 @@
 
 
           <!-- <td><%= link_to 'Delete Data Point', table_path(table),method: :delete,data: { confirm: 'Are you sure?' } %></td> -->
-
+          <td><input type="checkbox" checked data-toggle="toggle"></td>
           <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, table_path(table),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' %> </td>
+
       </tr>
     <% end %>
   </table>
@@ -72,7 +74,7 @@
           <%= render "tables/form3", :version => @version %>
 
         </div>
-      
+
       </div>
 
     </div>
