@@ -4,6 +4,7 @@
   <h1 align="center">Data Point Display</h1>
   <p> Your choice: <%= Reusable.myName(@version.Version_Name) %> </p>
 
+
   <%= myJson = {
     :id => "123",
     :fname => "Matt",
@@ -28,7 +29,7 @@
 
   end %>
 
-  <% controller.redirect_to map_home_path(:id1 => @myJson2) %>
+  <% controller.redirect_to map_home_path(:id1 => @myJson2, :choiceA => params[:choiceA]) %>
 
 
 
