@@ -2,6 +2,19 @@
 <div class = "jumbotron">
   <h1 align="center">Systems List</h1>
   <p align="center"> Add, edit or delete systems. Click on a system below to view its versions.</p>
+
+  <%= form_tag(systems_path, :method => "get", id: "search-form") do %>
+  <p align="center"><%= text_field_tag :search, params[:search], placeholder: "Search Systems" %>
+  <%= submit_tag "Search" %> </p>
+  <% end %>
+</p>
+
+<% if @systems.present? %>
+<% else %>
+  <p align="center">There are no posts containing the term(s) <%= params[:search] %>. Return to <%= link_to 'List of Systems', controller: 'systems' %></p>
+<% end %>
+
+
   <table  class="table table-hover" align="center" width="90%">
     <br>
     <tr>

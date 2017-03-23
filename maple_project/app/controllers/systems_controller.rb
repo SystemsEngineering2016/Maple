@@ -1,6 +1,11 @@
 class SystemsController < ApplicationController
   def index
   @systems = System.all
+  if params[:search]
+    @systems = System.search(params[:search]).order("created_at DESC")
+  else
+    @systems = System.all.order('created_at DESC')
+  end
 end
 
   def show
