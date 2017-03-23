@@ -1,0 +1,39 @@
+<body>
+
+<div class = "jumbotron">
+  <h1 align="center">Data Point Display</h1>
+  <p> Your choice: <%= Reusable.myName(@version.Version_Name) %> </p>
+
+  <%= myJson = {
+    :id => "123",
+    :fname => "Matt",
+    :lname => "Pol"
+  } %>
+  <%@myJson2= Array.new%>
+
+
+  <%= @version.table.each do |table|
+    @myJson2 << {
+      :LongestName => table.Longest_Name,
+      :ShortName => table.Short_Name,
+      :TableName => table.Table_Name,
+      :ColumnName => table.Column_Name,
+      :DataType => table.Data_Type,
+      :DisplayWidth => table.Display_Width,
+      :DisplayHeight => table.Display_Height,
+      :DisplayPrompt => table.Display_Prompt,
+      :Comment => table.Implementation_Comment
+
+    }
+
+  end %>
+
+  <% controller.redirect_to map_home_path(:id1 => @myJson2) %>
+
+
+
+
+
+
+</div>
+</body>

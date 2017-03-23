@@ -1,3 +1,67 @@
+<body>
+
 <div class = "jumbotron">
-  <h1 align="center">Mapping Page</h1>
+  <h1 align="center">Mapping</h1>
+
+  <!-- <table align="center" >
+    <br>
+    <tr>
+      <th>System Name</th>
+    </tr>
+    <% @systems.each do |system| %>
+    <tr>
+        <td><%= system.System_Name %></td>
+        <td><%= link_to system.System_Name, system_path(system) %></td>
+
+      </tr>
+      <% end %>
+
+    </table> -->
+      <br>
+
+      <div class="modal-body row" align = "center">
+        <div class="col-md-6">
+          <div class="dropdownLeft">
+            <p >Choose system 1</p>
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">List of Systems
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu" id="id1" align="center">
+                <% @systems.each do |f| %>
+                <li> <%= link_to f.System_Name, show_version_path(f) %> </li>
+
+                <% end %>
+              </ul>
+            </div>
+            <br>
+            
+            <p> Your choice: <%= params[:id].to_json %> </p>
+        </div>
+
+        <div class="col-md-6">
+          <div class="dropdownRight">
+            <p>Choose system 2:</p>
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">List of Systems
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu" id="id1" align="center">
+              <% @systems.each do |f| %>
+              <li> <%= link_to f.System_Name,  new_version_path(f) %> </li>
+
+              <% end %>
+            </ul>
+          </div>
+          <br>
+          <p> Your second choice: <%= params[:id1].to_json %> </p>
+
+
+        </div>
+      </div>
+
+
+
+
+
+
+
 </div>
+
+</body>

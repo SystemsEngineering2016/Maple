@@ -7,6 +7,15 @@ end
   @system = System.find(params[:id])
   end
 
+  def show2
+  @system = System.find(params[:id])
+  end
+
+  def newShow
+  @system = System.find(params[:id])
+  end
+
+
   def new
     @system = System.new
   end

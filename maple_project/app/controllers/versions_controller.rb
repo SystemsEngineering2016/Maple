@@ -7,6 +7,13 @@ class VersionsController < ApplicationController
     @version = Version.find(params[:id])
   end
 
+  def show2
+    @version = Version.find(params[:id])
+  end
+
+  def show3
+    @version = Version.find(params[:id])
+  end
   def edit
   @version = Version.find(params[:id])
   end

@@ -67,10 +67,15 @@
 #
 # end
 
-
 class Version < ApplicationRecord
+  include Reusable
+  # Custom directories with classes and modules you want to be autoloadable.
   belongs_to :system
   has_many :table, dependent: :destroy
   validates_presence_of :Version_Name
   validates_uniqueness_of :Version_Name, :scope => :system_id, :message => "already exists. Please choose a new version name. (Version names are not case sensitive).",:case_sensitive => false
+  def getName()
+    return puts "hello"
+  end
+
 end

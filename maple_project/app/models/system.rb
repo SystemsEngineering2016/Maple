@@ -1,4 +1,6 @@
 class System < ApplicationRecord
+  include Reusable
+  # Custom directories with classes and modules you want to be autoloadable.
   has_many :versions, dependent: :destroy
   has_many :tables, through: :versions, dependent: :destroy
   validates_presence_of :System_Name, :message => "must be provided. Please try again. "

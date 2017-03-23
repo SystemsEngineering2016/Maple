@@ -81,7 +81,22 @@ body {
   margin-right:auto;
   width: 60%;
 }
-.dropdown {text-align:center;}
+.dropdown {
+  text-align:center;
+}
+
+.dropdownLeft {
+  text-align:left;
+  width: 50%;
+}
+
+.dropdownRight {
+  text-align:right;
+  width: 50%;
+}
+
+
+
  .button,  .dropdown-menu {margin:10px auto}
  .dropdown-menu {width:200px; left:50%; margin-left:-100px;}
 #id1.dropdown-menu {font-size: 25px;}
