@@ -47,6 +47,6 @@ end
 
   private
     def version_params
-      params.require(:version).permit(:Version_Name)
+      params.require(:version).permit(:Version_Name, :active)
     end
 end

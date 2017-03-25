@@ -10,15 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317185747) do
+ActiveRecord::Schema.define(version: 20170325152117) do
 
-  create_table "systems", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "System_Name"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "tables", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "Tables", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Longest_Name"
     t.string   "Short_Name"
     t.string   "Table_Name"
@@ -34,14 +28,21 @@ ActiveRecord::Schema.define(version: 20170317185747) do
     t.index ["version_id"], name: "index_tables_on_version_id", using: :btree
   end
 
+  create_table "systems", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "System_Name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "versions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Version_Name"
     t.integer  "system_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.boolean  "active"
     t.index ["system_id"], name: "index_versions_on_system_id", using: :btree
   end
 
-  add_foreign_key "tables", "versions"
+  add_foreign_key "Tables", "versions"
   add_foreign_key "versions", "systems"
 end
