@@ -11,6 +11,7 @@
     <td><p><b>Version:</b> <%= @version.Version_Name %> </p></td>
   </tr>
 </table>
+<p align="center"> Below are all the data points for the chosen version. You are able to add, edit and delete data points all on this page. Edit data points by clicking on the wanted cells in the table below.</p>
 
   <table class="table table-hover" align="center" width="80%">
     <br>
@@ -26,7 +27,7 @@
 
 
       <th>Implementation Comment</th>
-      <th>Active</th>
+      <!-- <th>Active</th> -->
     </tr>
     <% @version.table.each do |table| %>
       <tr>
@@ -46,8 +47,8 @@
 
 
           <!-- <td><%= link_to 'Delete Data Point', table_path(table),method: :delete,data: { confirm: 'Are you sure?' } %></td> -->
-          <td><input type="checkbox" checked data-toggle="toggle"></td>
-          <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, table_path(table),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' %> </td>
+          <!-- <td><input type="checkbox" checked data-toggle="toggle"></td> -->
+          <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, table_path(table),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' , :title => "Delete system.", :title => "Delete data point."%> </td>
       </tr>
     <% end %>
   </table>
@@ -58,7 +59,7 @@
 
   <!-- Trigger the modal with a button -->
   <p align="center">
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add all values</button>
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add a Data Point</button>
 </p>
 
   <!-- Modal -->
@@ -69,7 +70,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add Multiple Values</h4>
+          <h3 class="modal-title" align="center">Add a New Data Point</h3>
         </div>
         <div class="modal-body">
           <%= render "tables/form3", :version => @version %>
