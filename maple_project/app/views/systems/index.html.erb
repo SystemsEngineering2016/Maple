@@ -5,7 +5,7 @@
 
   <%= form_tag(systems_path, :method => "get", id: "search-form") do %>
   <p align="center"><%= text_field_tag :search, params[:search], placeholder: "Search Systems" %>
-  <%= submit_tag "Search" %> </p>
+  <%= submit_tag "Search" , :title => "Search for a system"%> </p>
   <% end %>
 </p>
 
@@ -20,14 +20,14 @@
     <tr>
       <td><b>Systems</b></td>
     </tr>
-    <p align = "center"><%= link_to '<i class="glyphicon glyphicon-plus"></i> '.html_safe, new_system_path, class: 'btn btn-custom' %> </p>
+    <p align = "center"><%= link_to '<i class="glyphicon glyphicon-plus"></i> '.html_safe, new_system_path, class: 'btn btn-custom' , :title => "Add a new system"%> </p>
 
     <% @systems.each do |system| %>
 
     <tr>
-        <td><%= link_to system.System_Name, system_path(system)%></td>
-        <td> <%= link_to '<i class="glyphicon glyphicon-pencil"></i> '.html_safe, edit_system_path(system), class: 'btn btn-custom' %>
-         <%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, system_path(system),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' %> </td>
+        <td><%= link_to system.System_Name, system_path(system), :title => "Click to view the versions of this system."%></td>
+        <td> <%= link_to '<i class="glyphicon glyphicon-pencil"></i> '.html_safe, edit_system_path(system), class: 'btn btn-custom' , :title => "Edit system name."%>
+         <%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, system_path(system),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' , :title => "Delete system."%> </td>
       </tr>
       <% end %>
 
