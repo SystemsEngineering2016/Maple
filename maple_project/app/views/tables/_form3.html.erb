@@ -1,61 +1,48 @@
-<table class="table" align="center" width="20%">
+<table width="20%" align="center">
 
   <%= form_for([@version, @version.table.build]) do |f| %>
   <p align="center">
 
     <%= f.hidden_field :Table_Name, :value => @version.Version_Name%>
   </p>
+      <tr>
+      <td><%= f.label :Logical_Name %> </td>
+      <td><%= f.text_field :Longest_Name, :size=>"18"%></td>
+     </tr>
+    <tr>
+      <td> <%= f.label :Short_Name %></td>
+      <td> <%= f.text_field :Short_Name, :size=>"18" %> </td>
+    </tr>
+    <tr>
+    <td>  <%= f.label :Column_Name %></td>
+    <td><%= f.text_field :Column_Name, :size=>"18" %></td>
+    </tr>
+    <tr>
+      <td> <%= f.label :Data_Type  %></td>
+      <td> <%= f.text_field :Data_Type, :size=>"18" %> </td>
+    </tr>
+    <tr>
+      <td><%= f.label :Display_Width %></td>
+      <td><%= f.text_field :Display_Width, :size=>"18" %> </td>
+    </tr>
+    <tr>
+      <td><%= f.label :Display_Height %></td>
+      <td><%= f.text_field :Display_Height, :size=>"18" %> </td>
+    </tr>
+    <tr>
+      <td><%= f.label :Display_Prompt %></td>
+      <td><%= f.text_field :Display_Prompt, :size=>"18" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :Implementation_Comment %><br></td>
 
-      <td>
+      <td><%= f.text_field :Implementation_Comment, :size=>"18" %> </td>
+    </tr>
 
-          <%= f.label :Logical_Name %><br>
-          <%= f.text_field :Longest_Name, :size=>"18"%>
-
-      </td>
-      <td>
-          <%= f.label :Short_Name %><br>
-          <%= f.text_field :Short_Name, :size=>"12" %>
-
-      </td>
-    <td>
-
-          <%= f.label :Column_Name %><br>
-          <%= f.text_field :Column_Name, :size=>"15" %>
-      </td>
-
-      <td>
-
-          <%= f.label :Data_Type  %><br>
-          <%= f.text_field :Data_Type, :size=>"12"  %>
-
-      </td>
-      <td>
-
-          <%= f.label :Display_Width %><br>
-          <%= f.text_field :Display_Width, :size=>"10" %>
-
-      </td>
-      <td>
-
-          <%= f.label :Display_Height %><br>
-          <%= f.text_field :Display_Height, :size=>"10" %>
-
-      </td>
-      <td>
-
-          <%= f.label :Display_Prompt %><br>
-          <%= f.text_field :Display_Prompt, :size=>"15" %>
-
-      </td>
-      <td>
-
-          <%= f.label :Implementation_Comment %><br>
-          <%= f.text_field :Implementation_Comment, :size=>"35" %>
-
-      </td>
     </tr>
 
 </table>
+
 
 <p align="center">
   <%= f.submit "Create Data Point" %>
