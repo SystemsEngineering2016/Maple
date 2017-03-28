@@ -5,6 +5,7 @@ class VersionsController < ApplicationController
 
   def show
     @version = Version.find(params[:id])
+    @system=@version.system
   end
 
   def show2
