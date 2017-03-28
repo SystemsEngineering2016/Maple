@@ -30,8 +30,9 @@ class VersionsController < ApplicationController
 
   def update
   @version = Version.find(params[:id])
+  @system=@version.system
   if @version.update(version_params)
-    redirect_to @version
+    redirect_to system_path(@system)
   else
     render 'edit'
   end
