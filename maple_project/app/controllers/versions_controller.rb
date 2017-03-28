@@ -22,7 +22,7 @@ class VersionsController < ApplicationController
     @system = System.find(params[:system_id])
     @version = @system.versions.create(version_params)
     if @version.save
-        redirect_to @version
+        redirect_to system_path(@system)
     else
       render 'new'
     end
