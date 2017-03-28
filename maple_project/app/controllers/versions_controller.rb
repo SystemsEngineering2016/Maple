@@ -41,8 +41,9 @@ end
 
   def destroy
   @version = Version.find(params[:id])
+  @system=@version.system
   @version.destroy
-  redirect_to systems_path
+  redirect_to system_path(@system)
 
 end
 
