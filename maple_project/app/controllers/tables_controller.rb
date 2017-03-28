@@ -57,10 +57,10 @@ end
 
 def destroy
 @table = Table.find(params[:id])
+@version=@table.version
 @table.destroy
-redirect_to systems_path
+redirect_to version_path(@version)
 end
-
 
 
 private
