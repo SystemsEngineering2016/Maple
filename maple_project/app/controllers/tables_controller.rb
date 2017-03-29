@@ -67,7 +67,7 @@ end
 
 private
   def table_params
-    params.require(:table).permit( :Longest_Name,:Short_Name,:Table_Name, :Column_Name, :Data_Type, :Display_Width, :Display_Height, :Display_Prompt, :Display_Short_Prompt, :Implementation_Comment)
+    params.require(:table).permit( :Logical_Name,:Short_Name,:Table_Name, :Column_Name, :Data_Type, :Display_Width, :Display_Height, :Display_Prompt, :Display_Short_Prompt, :Implementation_Comment)
   end
 
 end
