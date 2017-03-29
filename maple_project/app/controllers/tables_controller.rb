@@ -12,12 +12,14 @@ class TablesController < ApplicationController
     @table = Table.find(params[:id])
   end
 
-
-
   def create
     @version = Version.find(params[:version_id])
     @table = @version.table.create(table_params)
-    redirect_to version_path(@version)
+    if @table.save
+        redirect_to version_path(@version)
+    else
+      render 'new'
+    end
 end
 
 
@@ -56,10 +58,10 @@ end
 
 
 def destroy
-@table = Table.find(params[:id])
-@version=@table.version
-@table.destroy
-redirect_to version_path(@version)
+  @table = Table.find(params[:id])
+  @version=@table.version
+  @table.destroy
+  redirect_to version_path(@version)
 end
 
 

@@ -6,7 +6,7 @@
   <div id="error_explanation">
     <h2>
       <%= pluralize(@version.errors.count, "error") %> prohibited
-      this article from being saved:
+      this version from being saved:
     </h2>
     <ul>
       <% @version.errors.full_messages.each do |msg| %>
