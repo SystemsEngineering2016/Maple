@@ -33,8 +33,26 @@
               </ul>
             </div>
             <br>
-            <p> First Choice: <%= params[:choiceA].to_json %>
 
+              <div class = "hidden" > <%= @matt = Table.where(version_id: params[:myID]).where(Logical_Name: " ") %> </div>
+
+              <table class="table table-hover" align="center" width="80%">
+                <br>
+                <tr>
+                  <th>Logical Name</th>
+                  <th>Short Name</th>
+                  <th>Table Name</th>
+                  <th>Column Name</th>
+                </tr>
+                <% @matt.each do |table| %>
+                  <tr>
+                      <td> <%= best_in_place table, :Logical_Name %> </td>
+                      <td> <%= best_in_place table, :Short_Name %> </td>
+                      <td> <%= best_in_place table, :Table_Name %> </td>
+                      <td> <%= best_in_place table, :Column_Name %> </td>
+                  </tr>
+                <% end %>
+              </table>
         </div>
 
         <div class="col-md-6">
@@ -44,13 +62,34 @@
             <span class="caret"></span></button>
             <ul class="dropdown-menu" id="id1" align="center">
               <% @systems.each do |f| %>
-              <li> <%= link_to f.System_Name,  new_version_path(f, :choiceA =>params[:id]) %> </li>
+              <li> <%= link_to f.System_Name,  new_version_path(f, :myID1 => params[:myID]) %> </li>
 
               <% end %>
             </ul>
           </div>
           <br>
-          <p> Your second choice: <%= params[:id1].to_json %> </p>
+          <div class = "hidden" >  <%= @matt = Table.where(version_id: params[:myID2]) %> </div>
+
+          <table class="table table-hover" align="center" width="80%">
+            <br>
+            <tr>
+              <th>Logical Name</th>
+              <th>Short Name</th>
+              <th>Table Name</th>
+              <th>Column Name</th>
+              <th>Implementation Comment</th>
+              <!-- <th>Active</th> -->
+            </tr>
+            <% @matt.each do |table| %>
+              <tr>
+                  <td> <%= best_in_place table, :Logical_Name %> </td>
+                  <td> <%= best_in_place table, :Short_Name %> </td>
+                  <td> <%= best_in_place table, :Table_Name %> </td>
+                  <td> <%= best_in_place table, :Column_Name %> </td>
+              </tr>
+            <% end %>
+          </table>
+
 
 
 

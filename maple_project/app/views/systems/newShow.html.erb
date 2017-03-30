@@ -12,7 +12,7 @@
 
       <% @system.versions.each do |version| %>
         <tr>
-            <td><%= link_to version.Version_Name,  display_version1_path(version, :choiceA => params[:choiceA])%></td>
+            <td><%= link_to version.Version_Name,  display_version1_path(version, :myID1 => params[:myID1])%></td>
         </tr>
       <% end %>
     </table>
