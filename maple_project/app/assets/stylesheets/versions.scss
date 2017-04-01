@@ -20,3 +20,37 @@ div.scrollWrapper{
 margin-right: auto ;
   overflow:scroll;
 }
+
+table.table-hover{
+
+  margin-left: auto ;
+margin-right: auto ;
+}
+
+table.table-hover thead tr{
+    display:block;
+}
+
+table.table-hover th{
+    width:120px;//fixed width
+    max-width:120px;
+    min-width:120px;
+
+    text-align: center;
+}
+
+table.table-hover td{
+    width:120px;//fixed width
+    max-width:120px;
+    min-width:120px;
+
+    text-align: center;
+
+}
+
+
+table.table-hover  tbody{
+  display:block;
+  height:400px;
+  overflow:auto;//set tbody to auto
+}

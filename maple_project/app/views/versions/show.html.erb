@@ -12,35 +12,41 @@
   </tr>
 </table>
 <p align="center"> Below are all the data points for the chosen version. You are able to add, edit and delete data points all on this page. Edit data points by clicking on the wanted cells in the table below.</p>
-<div class="scrollWrapper">
-  <table class="table table-hover" align="center" width="80%" >
-    <tbody height="xxx">
+
+
+  <table class="table table-hover" >
+
     <br>
+    <thead>
     <tr>
-      <th>Logical Name</th>
-      <th>Short Name</th>
-      <th>Table Name</th>
-      <th>Column Name</th>
-      <th>Data type</th>
-      <th>Display Width</th>
-      <th>Display Height</th>
-      <th>Display Prompt</th>
+      <th >Logical Name</th>
+      <th >Short Name</th>
+      <th >Table Name</th>
+      <th >Column Name</th>
+      <th >Data type</th>
+      <th >Display Width</th>
+      <th >Display Height</th>
+      <th >Display Prompt</th>
 
 
-      <th>Implementation Comment</th>
+      <th >Implementation Comment</th>
+      <th></th>
       <!-- <th>Active</th> -->
     </tr>
+  </thead>
+
+    <tbody >
     <% @version.table.each do |table| %>
       <tr>
-          <td> <%= best_in_place table, :Logical_Name %> </td>
-          <td> <%= best_in_place table, :Short_Name %> </td>
-          <td> <%= best_in_place table, :Table_Name %> </td>
-          <td> <%= best_in_place table, :Column_Name %> </td>
-          <td> <%= best_in_place table, :Data_Type %> </td>
-          <td> <%= best_in_place table, :Display_Width %> </td>
-          <td> <%= best_in_place table, :Display_Height %> </td>
-          <td> <%= best_in_place table, :Display_Prompt %> </td>
-          <td> <%= best_in_place table, :Implementation_Comment, :as => :textarea %> </td>
+          <td style="word-break:break-all;" align="center"> <%= best_in_place table, :Logical_Name %> </td>
+          <td style="word-break:break-all;" align="center"> <%= best_in_place table, :Short_Name %> </td>
+          <td style="word-break:break-all;" align="center"> <%= best_in_place table, :Table_Name %> </td>
+          <td style="word-break:break-all;" align="center"> <%= best_in_place table, :Column_Name %> </td>
+          <td align="center"> <%= best_in_place table, :Data_Type %> </td>
+          <td align="center"> <%= best_in_place table, :Display_Width %> </td>
+          <td align="center"> <%= best_in_place table, :Display_Height %> </td>
+          <td style="word-break:break-all;" align="center"> <%= best_in_place table, :Display_Prompt, :as => :textarea  %> </td>
+          <td align="center"> <%= best_in_place table, :Implementation_Comment, :as => :textarea %> </td>
           <!-- <td><%= link_to 'Delete Data Point', table_path(table),method: :delete,data: { confirm: 'Are you sure?' } %></td> -->
           <!-- <td><input type="checkbox" checked data-toggle="toggle"></td> -->
           <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, table_path(table),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' , :title => "Delete system.", :title => "Delete data point."%> </td>
@@ -48,7 +54,7 @@
     <% end %>
   </tbody>
   </table>
-</div>
+
 
 
 
