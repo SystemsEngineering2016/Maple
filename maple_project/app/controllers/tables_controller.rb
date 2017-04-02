@@ -1,4 +1,5 @@
 class TablesController < ApplicationController
+
   def new
     @version = Version.find(params[:version_id])
   end
@@ -23,16 +24,20 @@ class TablesController < ApplicationController
 end
 
 
-
-
 def update
+  @table= Table.find(params[:id])
+  @version=@table.version
 
-  @table = Table.find(params[:id])
-  if @table.update(table_params)
-    redirect_to @table
+
+  respond_to do |format|
+  if @table.update_attributes(table_params)
+    format.html { redirect_to(version_path(@version), :notice => 'User was successfully updated.') }
+    format.json { respond_with_bip(@table) }
   else
-    render 'edit'
+    format.html { render :action => "edit" }
+    format.json { respond_with_bip(@table) }
   end
+end
 
 
 # respond_to do |format|
