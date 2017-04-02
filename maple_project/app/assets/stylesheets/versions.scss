@@ -23,12 +23,17 @@ margin-right: auto ;
 
 table.table-hover1{
 
-  margin-left: auto ;
-margin-right: auto ;
+  margin-left:auto;
+  margin-right:auto;
+  width:98%;
+  border-spacing: 0;
+  border-collapse: collapse;
 }
 
 table.table-hover1 thead tr{
     display:block;
+
+
 }
 
 table.table-hover1 th{
@@ -43,7 +48,7 @@ table.table-hover1 td{
     width:120px;//fixed width
     max-width:120px;
     min-width:120px;
-
+    padding:0; margin:0;
     text-align: center;
 
 }
