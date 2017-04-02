@@ -28,12 +28,12 @@ table.table-hover1{
   width:98%;
   border-spacing: 0;
   border-collapse: collapse;
+
 }
 
 table.table-hover1 thead tr{
     display:block;
-
-
+  border-bottom: 3px solid #000000;
 }
 
 table.table-hover1 th{
@@ -49,6 +49,7 @@ table.table-hover1 td{
     max-width:120px;
     min-width:120px;
     padding:0; margin:0;
+    border-bottom: 1px solid #000000;
     text-align: center;
 
 }
@@ -58,4 +59,5 @@ table.table-hover1  tbody{
   display:block;
   height:250px;
   overflow:auto;//set tbody to auto
+
 }
