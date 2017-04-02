@@ -3,22 +3,6 @@
 <div class = "jumbotron">
   <h1 align="center">Mapping</h1>
 
-  <!-- <table align="center" >
-    <br>
-    <tr>
-      <th>System Name</th>
-    </tr>
-    <% @systems.each do |system| %>
-    <tr>
-        <td><%= system.System_Name %></td>
-        <td><%= link_to system.System_Name, system_path(system) %></td>
-
-      </tr>
-      <% end %>
-
-    </table> -->
-      <br>
-
       <div class="modal-body row" align = "center">
         <div class="col-md-6">
           <div class="dropdownLeft">
@@ -27,14 +11,14 @@
               <span class="caret"></span></button>
               <ul class="dropdown-menu" id="id1" align="center">
                 <% @systems.each do |f| %>
-                <li> <%= link_to f.System_Name, show_version_path(f) %> </li>
+                <li> <%= link_to f.System_Name, show_version_path(f, :myID2 => params[:myID2]) %> </li>
 
                 <% end %>
               </ul>
             </div>
             <br>
 
-              <div class = "hidden" > <%= @matt = Table.where(version_id: params[:myID]).where(Logical_Name: " ") %> </div>
+              <div class = "hidden" > <%= @matt = Table.where(version_id: params[:myID]) %> </div>
 
               <table class="table table-hover" align="center" width="80%">
                 <br>
@@ -77,8 +61,7 @@
               <th>Short Name</th>
               <th>Table Name</th>
               <th>Column Name</th>
-              <th>Implementation Comment</th>
-              <!-- <th>Active</th> -->
+
             </tr>
             <% @matt.each do |table| %>
               <tr>
@@ -89,20 +72,8 @@
               </tr>
             <% end %>
           </table>
-
-
-
-
-
         </div>
       </div>
-
-
-
-
-
-
-
 </div>
 
 </body>
