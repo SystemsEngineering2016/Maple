@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170402181343) do
+ActiveRecord::Schema.define(version: 20170403210102) do
+
+  create_table "maps", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "mapfrom_id"
+    t.integer "mapto_id"
+    t.index ["mapfrom_id"], name: "index_maps_on_mapfrom_id", using: :btree
+    t.index ["mapto_id"], name: "index_maps_on_mapto_id", using: :btree
+  end
 
   create_table "systems", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "System_Name"
