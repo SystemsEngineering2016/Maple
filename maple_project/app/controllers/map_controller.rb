@@ -1,7 +1,7 @@
 class MapController < ApplicationController
 
 def index
-    @systems = System.all
+    @maps = Map.all
   end
 
   def new
@@ -15,6 +15,14 @@ def index
     @map.save
     redirect_to map_index_path
   end
+
+
+def destroy
+  @map = Map.find(params[:id])
+  @map.destroy
+
+  redirect_to map_index_path
+end
 
   private
     def map_params
