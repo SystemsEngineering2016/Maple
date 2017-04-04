@@ -7,32 +7,47 @@
 <table class="table table-hover" align="center" width="90%">
   <tr>
     <th>Data point id </th>
+    <th>Version Name </th>
+    <th>System Name </th>
     <th>Logical Name </th>
     <th>Short Name </th>
     <th>Table Name </th>
     <th>Column Name </th>
+
+
     <th></th>
     <th></th>
     <th></th>
     <th>Data point id </th>
+    <th>Version Name </th>
+    <th>System Name </th>
     <th>Logical Name </th>
     <th>Short Name </th>
     <th>Table Name </th>
     <th>Column Name </th>
+
+
+
     <th></th>
   </tr>
 
   <% @maps.each do |map| %>
     <tr>
       <td><%= map.mapfrom_id %></td>
+      <td><%= Version.find(map.mapfrom.version_id).Version_Name %> </td>
+      <td><%= System.find(Version.find(map.mapfrom.version_id).system_id).System_Name %> </td>
       <td><%= map.mapfrom.Logical_Name %></td>
       <td><%= map.mapfrom.Short_Name %></td>
       <td><%= map.mapfrom.Table_Name %></td>
       <td><%= map.mapfrom.Column_Name %></td>
+
+
       <td></td>
       <td style="color:red;">Maps to</td>
       <td></td>
       <td><%= map.mapto_id%></td>
+      <td><%= Version.find(map.mapfrom.version_id).Version_Name %> </td>
+      <td><%= System.find(Version.find(map.mapfrom.version_id).system_id).System_Name %> </td>
       <td><%= map.mapto.Logical_Name %></td>
       <td><%= map.mapto.Short_Name %></td>
       <td><%= map.mapto.Table_Name %></td>
