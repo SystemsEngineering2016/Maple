@@ -10,10 +10,13 @@ def index
   end
 
   def create
+    @systems = System.all
     @map = Map.new(map_params)
-
-    @map.save
+  if @map.save
     redirect_to map_index_path
+  else
+     render 'new'
+  end
   end
 
 
