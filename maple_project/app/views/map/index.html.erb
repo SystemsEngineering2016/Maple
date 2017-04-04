@@ -46,8 +46,8 @@
       <td style="color:red;">Maps to</td>
       <td></td>
       <td><%= map.mapto_id%></td>
-      <td><%= Version.find(map.mapfrom.version_id).Version_Name %> </td>
-      <td><%= System.find(Version.find(map.mapfrom.version_id).system_id).System_Name %> </td>
+      <td><%= Version.find(map.mapto.version_id).Version_Name %> </td>
+      <td><%= System.find(Version.find(map.mapto.version_id).system_id).System_Name %> </td>
       <td><%= map.mapto.Logical_Name %></td>
       <td><%= map.mapto.Short_Name %></td>
       <td><%= map.mapto.Table_Name %></td>
