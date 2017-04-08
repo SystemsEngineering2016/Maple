@@ -21,7 +21,7 @@ margin-right: auto ;
   overflow:scroll;
 }
 
-table.table-hover1{
+.table-hover1{
 
   margin-left:auto;
   margin-right:auto;
@@ -31,31 +31,33 @@ table.table-hover1{
 
 }
 
-table.table-hover1 thead tr{
-    display:block;
+.table-hover1 thead tr{
+    // display:block;
+  border-top: 1px solid #000000;
   border-bottom: 3px solid #000000;
 }
 
-table.table-hover1 th{
-    width:120px;//fixed width
+.table-hover1 th{
 
-
-    text-align: center;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+  text-align: center;
 }
 
-table.table-hover1 td{
-    width:120px;//fixed width
+.table-hover1 td{
 
     padding:0; margin:0;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
     border-bottom: 1px solid #000000;
     text-align: center;
 
 }
-
-
-table.table-hover1  tbody{
-  display:block;
-  height:250px;
-  overflow:auto;//set tbody to auto
-
-}
+//
+//
+// .table-hover1  tbody{
+//   display:block;
+//   height:250px;
+//   overflow:auto;//set tbody to auto
+//
+// }
