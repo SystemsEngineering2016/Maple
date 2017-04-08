@@ -4,7 +4,6 @@
   <p align="center">
 
 
-    <%= f.hidden_field :Table_Name, :value => @version.Version_Name%>
   </p>
       <tr>
       <td><%= f.label :Logical_Name %> </td>
@@ -13,6 +12,10 @@
     <tr>
       <td> <%= f.label :Short_Name %></td>
       <td> <%= f.text_field :Short_Name, :size=>"18" %> </td>
+    </tr>
+    <tr>
+      <td> <%= f.label :Table_Name %></td>
+      <td> <%= f.text_field :Table_Name, :size=>"18" %> </td>
     </tr>
     <tr>
     <td>  <%= f.label :Column_Name %></td>
@@ -36,7 +39,6 @@
     </tr>
     <tr>
       <td><%= f.label :Implementation_Comment %><br></td>
-
       <td><%= f.text_area :Implementation_Comment, :cols => "21", :rows => "7" %> </td>
     </tr>
 

@@ -37,15 +37,15 @@
     <tbody >
     <% @version.table.each do |table| %>
       <tr>
-          <td style="word-break:break-all;" > <%= best_in_place table, :Logical_Name , :html_attrs => { :style => 'width:120px' }, :as => :textarea%> </td>
-          <td style="word-break:break-all;" > <%= best_in_place table, :Short_Name, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
-          <td style="word-break:break-all;" > <%= best_in_place table, :Table_Name, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
-          <td style="word-break:break-all;" > <%= best_in_place table, :Column_Name, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
-          <td style="word-break:break-all;"> <%= best_in_place table, :Data_Type, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
-          <td > <%= best_in_place table, :Display_Width , :html_attrs => { size: 5 } %> </td>
-          <td > <%= best_in_place table, :Display_Height, :html_attrs => { size: 5 }  %> </td>
-          <td style="word-break:break-all;"> <%= best_in_place table, :Display_Prompt, :html_attrs => { :style => 'width:110px' }, :as => :textarea, :as => :textarea  %> </td>
-          <td style="word-break:break-all;"> <%= best_in_place table, :Implementation_Comment, :html_attrs => { :style => 'width:120px' }, :as => :textarea, :as => :textarea %> </td>
+          <td> <%= best_in_place table, :Logical_Name , :html_attrs => { :style => 'width:120px' }, :as => :textarea%> </td>
+          <td> <%= best_in_place table, :Short_Name, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
+          <td> <%= best_in_place table, :Table_Name, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
+          <td> <%= best_in_place table, :Column_Name, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
+          <td> <%= best_in_place table, :Data_Type, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
+          <td> <%= best_in_place table, :Display_Width , :html_attrs => { size: 5 } %> </td>
+          <td> <%= best_in_place table, :Display_Height, :html_attrs => { size: 5 }  %> </td>
+          <td> <%= best_in_place table, :Display_Prompt, :html_attrs => { :style => 'width:110px' }, :as => :textarea, :as => :textarea  %> </td>
+          <td> <%= best_in_place table, :Implementation_Comment, :html_attrs => { :style => 'width:120px' }, :as => :textarea, :as => :textarea %> </td>
           <!-- <td><%= link_to 'Delete Data Point', table_path(table),method: :delete,data: { confirm: 'Are you sure?' } %></td> -->
           <!-- <td><input type="checkbox" checked data-toggle="toggle"></td> -->
           <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, table_path(table),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' , :title => "Delete system.", :title => "Delete data point."%> </td>
