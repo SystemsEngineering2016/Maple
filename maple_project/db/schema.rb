@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170404101250) do
+ActiveRecord::Schema.define(version: 20170408110815) do
 
   create_table "maps", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "mapfrom_id"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20170404101250) do
     t.integer  "Display_Height"
     t.string   "Display_Prompt"
     t.text     "Implementation_Comment", limit: 65535
+    t.string   "Data_Point_Status"
     t.integer  "version_id"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false

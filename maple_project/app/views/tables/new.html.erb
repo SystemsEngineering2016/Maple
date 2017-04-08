@@ -60,8 +60,8 @@
     <td><%= f.text_field :Column_Name, :size=>"18" %></td>
     </tr>
     <tr>
-      <td> <%= f.label :Data_Type  %></td>
-      <td> <%= f.text_field :Data_Type, :size=>"18" %> </td>
+      <td> <%= f.label :Data_Type %></td>
+      <td> <%= f.select(:Data_Type, ['TEXT', 'NUMBER', 'DATE'], :prompt => "Select Data Type", :style => "width:140px") %></td>
     </tr>
     <tr>
       <td><%= f.label :Display_Width %></td>
@@ -78,6 +78,10 @@
     <tr>
       <td><%= f.label :Implementation_Comment %><br></td>
       <td><%= f.text_area :Implementation_Comment, :cols => "21", :rows => "7" %> </td>
+    </tr>
+    <tr>
+      <td> <%= f.label :Data_Point_Status %></td>
+      <td> <%= f.select(:Data_Point_Status, ['Active', 'Removed', 'Deprecated'], :prompt => "Select Status", :style => "width:150px") %></td>
     </tr>
 
     </tr>
