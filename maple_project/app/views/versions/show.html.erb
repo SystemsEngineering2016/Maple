@@ -12,8 +12,9 @@
   </tr>
 </table>
 <p align="center"> Below are all the data points for the chosen version. You are able to add, edit and delete data points all on this page. Edit data points by clicking on the wanted cells in the table below.</p>
-
-<table class="table table-hover1" >
+<div id="constrainer">
+       <div class="scrolltable">
+<table class="header" style="border-spacing: 0px;">
 
     <br>
     <thead>
@@ -32,19 +33,23 @@
       <!-- <th>Active</th> -->
     </tr>
   </thead>
+</table>
+<div class="body">
+  <table style="border-spacing: 0px;">
 
     <tbody >
     <% @version.table.each do |table| %>
+
       <tr>
           <td> <%= best_in_place table, :Logical_Name , :html_attrs => { :style => 'width:120px' }, :as => :textarea%> </td>
           <td> <%= best_in_place table, :Short_Name, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
-          <td> <%= best_in_place table, :Table_Name, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
-          <td> <%= best_in_place table, :Column_Name, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
+          <td > <%= best_in_place table, :Table_Name, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
+          <td > <%= best_in_place table, :Column_Name, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
           <td> <%= best_in_place table, :Data_Type,:as => :select, collection: [["TEXT", "TEXT"], ["NUMBER", "NUMBER"], ["DATE", "DATE"]]  %> </td>
           <td> <%= best_in_place table, :Display_Width , :html_attrs => { size: 5 } %> </td>
           <td> <%= best_in_place table, :Display_Height, :html_attrs => { size: 5 }  %> </td>
-          <td> <%= best_in_place table, :Display_Prompt, :html_attrs => { :style => 'width:110px' }, :as => :textarea, :as => :textarea  %> </td>
-          <td> <%= best_in_place table, :Implementation_Comment, :html_attrs => { :style => 'width:120px' }, :as => :textarea, :as => :textarea %> </td>
+          <td > <%= best_in_place table, :Display_Prompt, :html_attrs => { :style => 'width:110px' }, :as => :textarea, :as => :textarea  %> </td>
+          <td > <%= best_in_place table, :Implementation_Comment, :html_attrs => { :style => 'width:120px' }, :as => :textarea, :as => :textarea %> </td>
           <!-- <td><%= table.Data_Point_Status%></td> -->
           <td><%= best_in_place table, :Data_Point_Status, :as => :select, collection: [["Active", "Active"], ["Removed", "Removed"], ["Deprecated", "Deprecated"]] %></td>
           <!-- <td><%= link_to 'Delete Data Point', table_path(table),method: :delete,data: { confirm: 'Are you sure?' } %></td> -->
@@ -54,6 +59,9 @@
     <% end %>
   </tbody>
   </table>
+</div>
+</div>
+</div>
 
 
 
@@ -90,7 +98,6 @@
 
   <!-- <p align="center">
     <%= link_to 'Add a New Data Point', new_version_table_path(@version) %>
-
   </p> -->
 
 

@@ -14,11 +14,11 @@
 
 div.scrollWrapper{
 
-  height:400px;
-  width:800px;
+  height:250px;
+  width:100%;
   margin-left: auto ;
 margin-right: auto ;
-  overflow:scroll;
+  overflow:auto;
 }
 
 .table-hover1{
@@ -53,11 +53,63 @@ margin-right: auto ;
     text-align: center;
 
 }
-//
-//
-// .table-hover1  tbody{
+
+// .table-hover1 thead, tbody{
 //   display:block;
-//   height:250px;
-//   overflow:auto;//set tbody to auto
-//
 // }
+
+
+.table-hover1  tbody{
+  // display:block;
+  height:250px;
+  overflow:auto;//set tbody to auto
+
+}
+
+#constrainer {       height: 300px;       width: 98%; }
+
+.scrolltable {
+    overflow-x: scroll;
+    height: 100%;
+
+
+}
+
+.scrolltable > .body {
+    width: -webkit-fit-content;
+    overflow-y: scroll;
+}
+
+.scrolltable {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    
+}
+.scrolltable > .header { }
+.scrolltable > .body {
+    flex: 1;
+    -webkit-flex: 1;
+}
+.scrolltable > .header th {
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-top: 1px solid #000000;
+  border-bottom: 3px solid #000000;
+  min-width: 140px;
+  max-width: 140px;
+  text-align: center;
+}
+
+.scrolltable > .body td {
+min-width: 140px;
+max-width: 140px;
+word-wrap: break-word;
+text-align: center;
+
+border-top: 1px solid #000000;
+border-left: 1px solid #000000;
+border-right: 1px solid #000000;
+border-bottom: 1px solid #000000;
+}
