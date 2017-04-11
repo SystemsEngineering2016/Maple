@@ -94,7 +94,12 @@
  <h2 align="center"> Data Points available to map </h2>
  <%= form_for :map, url: map_index_path do |f| %>
 
-
+ <p align="center">
+   <%= f.hidden_field :fromVersionName, :value => params[:myID] %>
+ </p>
+ <p align="center">
+   <%= f.hidden_field :toVersionName, :value => params[:myID2]%>
+ </p>
       <div class="modal-body row" align = "center">
         <div class="col-md-6">
               <div class = "hidden" > <%= @matt = Table.where(version_id: params[:myID]) %> </div>
@@ -117,6 +122,13 @@
                   </tr>
                 <% end %>
               </table>
+
+              <p align="center">
+                    Please choose a data point from the dropdown below (Logical_Name displayed): </br>
+                    <%= f.label :Data_Point_to_Map_from %></br>
+                    <%= f.collection_select :mapfrom_id, @matt.all, :id , :Logical_Name %>
+              </p>
+
         </div>
         <div class="col-md-6">
           <div class = "hidden" >  <%= @matt = Table.where(version_id: params[:myID2]) %> </div>
@@ -139,7 +151,16 @@
               </tr>
             <% end %>
           </table>
+
+
+          <p align="center">
+                Please choose a data point from the dropdown below (Logical_Name displayed): </br>
+                <%= f.label :Data_Point_to_Map_to %></br>
+                <%= f.collection_select :mapto_id, @matt.all, :id , :Logical_Name %>
+          </p>
+
         </div>
+
       </div>
       <br>
 
@@ -157,19 +178,15 @@
         <p align="center"><%= link_to 'Return Back to current mappings', :back %></p>
       </div>
      <% end %>
-    <div class="modal-body row" align = "center">
+
+    <!-- <div class="modal-body row" align = "center">
       <div class="col-md-6">
         <div class="dropdownLeft">
           <p align="center">
             <%= f.label :Choice_1%>
             <%= f.text_field :mapfrom_id %>
           </p>
-          <p align="center">
-            <%= f.hidden_field :fromVersionName, :value => params[:myID] %>
-          </p>
-          <p align="center">
-            <%= f.hidden_field :toVersionName, :value => params[:myID2]%>
-          </p>
+
           </div>
       </div>
       <div class="col-md-6">
@@ -180,10 +197,12 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
     <p align="center">
       <%= f.submit "Create Data Point Mapping"%>
     </p>
   <% end %>
+
+
 </div>
 </body>

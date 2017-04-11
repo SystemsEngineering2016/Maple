@@ -15,9 +15,9 @@ def index
   if @map.save
     redirect_back(fallback_location: root_path,notice: "You have successfully created a new mapping.")
   else
-    flash.now[:error] = "Could not save mapping. Check below for errors."
-    render 'new'
-    # redirect_to :back, :flash => { :error => @map.errors.full_messages.join(', '), }
+    # flash.now[:error] = "Could not save mapping. Check below for errors."
+    # render 'new'
+    redirect_to :back, :flash => { :error => @map.errors.full_messages.join(', '), }
   end
   end
 
