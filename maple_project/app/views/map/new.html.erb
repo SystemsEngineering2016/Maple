@@ -92,6 +92,7 @@
 
  <!-- SECOND HALF -->
  <h2 align="center"> Data Points available to map </h2>
+ <p align="center"> Please select one datapoint from each table below before clicking the submit button.</p>
  <%= form_for :map, url: map_index_path do |f| %>
 
  <p align="center">
@@ -106,6 +107,7 @@
               <table class="table table-hover" align="center" width="80%">
                 <br>
                 <tr>
+                  <th></th>
                   <th>id</th>
                   <th>Logical Name</th>
                   <th>Short Name</th>
@@ -114,6 +116,7 @@
                 </tr>
                 <% @matt.each do |table| %>
                   <tr>
+                      <td>  <%= f.radio_button :mapfrom_id, table.id %> </td>
                       <td><%= table.id%></td>
                       <td> <%= best_in_place table, :Logical_Name %> </td>
                       <td> <%= best_in_place table, :Short_Name %> </td>
@@ -123,11 +126,11 @@
                 <% end %>
               </table>
 
-              <p align="center">
+              <!-- <p align="center">
                     Please choose a data point from the dropdown below (Logical_Name displayed): </br>
                     <%= f.label :Data_Point_to_Map_from %></br>
                     <%= f.collection_select :mapfrom_id, @matt.all, :id , :Logical_Name %>
-              </p>
+              </p> -->
 
         </div>
         <div class="col-md-6">
@@ -135,6 +138,7 @@
           <table class="table table-hover" align="center" width="80%">
             <br>
             <tr>
+              <th></th>
               <th>id</th>
               <th>Logical Name</th>
               <th>Short Name</th>
@@ -143,6 +147,8 @@
             </tr>
             <% @matt.each do |table| %>
               <tr>
+
+                  <td>  <%= f.radio_button :mapto_id, table.id %> </td>
                   <td><%= table.id%></td>
                   <td> <%= best_in_place table, :Logical_Name %> </td>
                   <td> <%= best_in_place table, :Short_Name %> </td>
@@ -152,12 +158,12 @@
             <% end %>
           </table>
 
-
+<!--
           <p align="center">
                 Please choose a data point from the dropdown below (Logical_Name displayed): </br>
                 <%= f.label :Data_Point_to_Map_to %></br>
                 <%= f.collection_select :mapto_id, @matt.all, :id , :Logical_Name %>
-          </p>
+          </p> -->
 
         </div>
 
@@ -204,5 +210,4 @@
   <% end %>
 
 
-</div>
 </body>
