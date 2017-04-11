@@ -18,6 +18,7 @@ def index
     # flash.now[:error] = "Could not save mapping. Check below for errors."
     # render 'new'
     redirect_to :back, :flash => { :error => @map.errors.full_messages.to_sentence }
+
   end
   end
 

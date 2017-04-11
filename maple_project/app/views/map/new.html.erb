@@ -177,7 +177,7 @@
           this article from being saved:
         </h2>
         <ul>
-          <% @map.errors.full_messages.each do |msg| %>
+          <% @map.errors.each do |attr,msg| %>
             <li><%= msg %></li>
           <% end %>
         </ul>
