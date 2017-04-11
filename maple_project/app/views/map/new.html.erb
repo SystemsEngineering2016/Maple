@@ -26,6 +26,15 @@
       <%= f.label :Data_Point_1%>
       <%= f.text_field :mapfrom_id %>
     </p>
+    <p align="center">
+
+      <%= f.hidden_field :fromVersionName, :value => "123"%>
+    </p>
+
+    <p align="center">
+
+      <%= f.hidden_field :toVersionName, :value => "123"%>
+    </p>
 
     <p align="center">
       <%= f.label :Data_Point_2%>
@@ -36,6 +45,8 @@
       <%= f.submit "Create Data Point Mapping"%>
     </p>
   <% end %>
+
+
 
   <br>
       <div class="modal-body row" align = "center">
@@ -67,6 +78,7 @@
                 <% @matt.each do |table| %>
                   <tr>
                       <td><%= table.id%></td>
+
                       <td> <%= best_in_place table, :Logical_Name %> </td>
                       <td> <%= best_in_place table, :Short_Name %> </td>
                       <td> <%= best_in_place table, :Table_Name %> </td>
