@@ -4,5 +4,6 @@ class Map < ApplicationRecord
   validates_presence_of :mapfrom_id, :message => "must be provided. Please try again. "
   validates_presence_of :mapto_id, :message => "must be provided. Please try again. "
 
+
   validates_uniqueness_of :mapfrom_id, :scope => [:mapto_id], :message => "You have already created this mapping. Please try again. "
 end

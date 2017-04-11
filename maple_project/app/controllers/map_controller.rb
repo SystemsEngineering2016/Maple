@@ -19,6 +19,21 @@ def index
   end
   end
 
+  def edit
+    @map = Map.find(params[:id])
+  end
+
+  def update
+    @map = Map.find(params[:id])
+
+  if @map.update(system_params)
+    redirect_to @map
+  else
+    render 'edit'
+  end
+  end
+
+
 
 def destroy
   @map = Map.find(params[:id])
@@ -29,6 +44,6 @@ end
 
   private
     def map_params
-      params.require(:map).permit(:mapfrom_id, :mapto_id)
+      params.require(:map).permit(:mapfrom_id, :mapto_id, :fromVersionName, :toVersionName)
     end
 end
