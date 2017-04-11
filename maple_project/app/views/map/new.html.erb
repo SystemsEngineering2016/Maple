@@ -17,8 +17,6 @@
               </ul>
             </div>
         </div>
-
-
         <div class="col-md-6">
           <div class="dropdownRight">
             <p>Choose system 2:</p>
@@ -27,18 +25,13 @@
             <ul class="dropdown-menu" id="id1" align="center">
               <% @systems.each do |f| %>
               <li> <%= link_to f.System_Name,  new_version_path(f, :myID1 => params[:myID]) %> </li>
-
               <% end %>
             </ul>
           </div>
-
         </div>
-
       </div>
-
       <div class = "hidden" >  <%= @filtered = Map.where(fromVersionName: params[:myID]).where(toVersionName: params[:myID2]) %> </div>
       <h2 align="center"> Your current mappings </h2>
-
               <table class="table table-hover" align="center" width="90%">
                 <tr>
                   <th>Data point id </th>
@@ -48,8 +41,6 @@
                   <th>Short Name </th>
                   <th>Table Name </th>
                   <th>Column Name </th>
-
-
                   <th></th>
                   <th></th>
                   <th></th>
@@ -60,9 +51,6 @@
                   <th>Short Name </th>
                   <th>Table Name </th>
                   <th>Column Name </th>
-
-
-
                   <th></th>
                 </tr>
 
@@ -75,8 +63,6 @@
                     <td><%= map.mapfrom.Short_Name %></td>
                     <td><%= map.mapfrom.Table_Name %></td>
                     <td><%= map.mapfrom.Column_Name %></td>
-
-
                     <td></td>
                     <td style="color:red;">Maps to</td>
                     <td></td>
@@ -88,7 +74,6 @@
                     <td><%= map.mapto.Table_Name %></td>
                     <td><%= map.mapto.Column_Name %></td>
                     <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, map_path(map),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' , :title => "Delete mapping"%> </td>
-
                   </tr>
                 <% end %>
               </table>
@@ -110,18 +95,9 @@
    </ul>
  </div>
 <% end %>
-
-
-
-
-
-
       <div class="modal-body row" align = "center">
         <div class="col-md-6">
-
-
               <div class = "hidden" > <%= @matt = Table.where(version_id: params[:myID]) %> </div>
-
               <table class="table table-hover" align="center" width="80%">
                 <br>
                 <tr>
@@ -134,7 +110,6 @@
                 <% @matt.each do |table| %>
                   <tr>
                       <td><%= table.id%></td>
-
                       <td> <%= best_in_place table, :Logical_Name %> </td>
                       <td> <%= best_in_place table, :Short_Name %> </td>
                       <td> <%= best_in_place table, :Table_Name %> </td>
@@ -142,15 +117,9 @@
                   </tr>
                 <% end %>
               </table>
-
-
         </div>
-
-
         <div class="col-md-6">
-
           <div class = "hidden" >  <%= @matt = Table.where(version_id: params[:myID2]) %> </div>
-
           <table class="table table-hover" align="center" width="80%">
             <br>
             <tr>
@@ -159,7 +128,6 @@
               <th>Short Name</th>
               <th>Table Name</th>
               <th>Column Name</th>
-
             </tr>
             <% @matt.each do |table| %>
               <tr>
@@ -171,40 +139,24 @@
               </tr>
             <% end %>
           </table>
-
-
-
-
         </div>
-
       </div>
-
       <br>
-
-
-
-
     <div class="modal-body row" align = "center">
       <div class="col-md-6">
         <div class="dropdownLeft">
           <p align="center">
             <%= f.label :Choice_1%>
-            
             <%= f.text_field :mapfrom_id %>
           </p>
           <p align="center">
             <%= f.hidden_field :fromVersionName, :value => params[:myID] %>
-
           </p>
-
           <p align="center">
-
             <%= f.hidden_field :toVersionName, :value => params[:myID2]%>
           </p>
           </div>
       </div>
-
-
       <div class="col-md-6">
         <div class="dropdownRight">
           <p align="center">
@@ -212,20 +164,11 @@
             <%= f.text_field :mapto_id %>
           </p>
         </div>
-
       </div>
-
     </div>
-
     <p align="center">
       <%= f.submit "Create Data Point Mapping"%>
     </p>
   <% end %>
-
-
-
-
-
 </div>
-
 </body>
