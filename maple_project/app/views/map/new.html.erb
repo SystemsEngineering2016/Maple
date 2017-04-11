@@ -123,7 +123,11 @@
                 <% end %>
               </table>
 
-
+              <p align="center">
+                    Please choose a data point from the dropdown below (Logical_Name displayed): </br>
+                    <%= f.label :Data_Point_to_Map_from %></br>
+                    <%= f.collection_select :mapfrom_id, @matt.all, :id , :Logical_Name %>
+              </p>
 
         </div>
         <div class="col-md-6">
@@ -149,7 +153,11 @@
           </table>
 
 
-
+          <p align="center">
+                Please choose a data point from the dropdown below (Logical_Name displayed): </br>
+                <%= f.label :Data_Point_to_Map_to %></br>
+                <%= f.collection_select :mapto_id, @matt.all, :id , :Logical_Name %>
+          </p>
 
         </div>
 
@@ -171,13 +179,12 @@
       </div>
      <% end %>
 
-    <div class="modal-body row" align = "center">
+    <!-- <div class="modal-body row" align = "center">
       <div class="col-md-6">
         <div class="dropdownLeft">
           <p align="center">
-                Please choose a data point from the dropdown below (Logical_Name displayed): </br>
-                <%= f.label :Data_Point_to_Map_from %></br>
-                <%= f.collection_select :mapfrom_id, @matt.all, :id , :Logical_Name %>
+            <%= f.label :Choice_1%>
+            <%= f.text_field :mapfrom_id %>
           </p>
 
           </div>
@@ -185,13 +192,12 @@
       <div class="col-md-6">
         <div class="dropdownRight">
           <p align="center">
-                Please choose a data point from the dropdown below (Logical_Name displayed): </br>
-                <%= f.label :Data_Point_to_Map_to %></br>
-                <%= f.collection_select :mapto_id, @matt.all, :id , :Logical_Name %>
+            <%= f.label :Choice_2%>
+            <%= f.text_field :mapto_id %>
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
     <p align="center">
       <%= f.submit "Create Data Point Mapping"%>
     </p>
