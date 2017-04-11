@@ -93,19 +93,7 @@
  <h2 align="center"> Data Points available to map </h2>
  <%= form_for :map, url: map_index_path do |f| %>
 
- <% if @map.errors.any? %>
- <div id="error_explanation">
-   <h2>
-     <%= pluralize(@map.errors.count, "error") %> prohibited
-     this article from being saved:
-   </h2>
-   <ul>
-     <% @map.errors.full_messages.each do |msg| %>
-       <li><%= msg %></li>
-     <% end %>
-   </ul>
- </div>
-<% end %>
+
       <div class="modal-body row" align = "center">
         <div class="col-md-6">
               <div class = "hidden" > <%= @matt = Table.where(version_id: params[:myID]) %> </div>
@@ -153,6 +141,20 @@
         </div>
       </div>
       <br>
+
+      <% if @map.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@map.errors.count, "error") %> prohibited
+          this article from being saved:
+        </h2>
+        <ul>
+          <% @map.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+     <% end %>
     <div class="modal-body row" align = "center">
       <div class="col-md-6">
         <div class="dropdownLeft">

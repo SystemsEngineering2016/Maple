@@ -15,7 +15,8 @@ def index
   if @map.save
     redirect_back(fallback_location: root_path,notice: "You have successfully created a new mapping.")
   else
-     render 'new'
+    flash[:error] = "The mapping can't be saved"
+    render 'new'
   end
   end
 
