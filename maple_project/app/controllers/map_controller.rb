@@ -13,7 +13,7 @@ def index
     @systems = System.all
     @map = Map.new(map_params)
   if @map.save
-    redirect_to map_index_path
+    redirect_back(fallback_location: root_path,notice: "You have successfully created a new mapping.")
   else
      render 'new'
   end
@@ -38,8 +38,8 @@ def index
 def destroy
   @map = Map.find(params[:id])
   @map.destroy
+  redirect_back(fallback_location: root_path,notice: "You have successfully deleted the mapping.")
 
-  redirect_to map_index_path
 end
 
   private

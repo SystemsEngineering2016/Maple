@@ -3,6 +3,17 @@
 <div class = "jumbotron">
   <h1 align="center">Create a New Mapping</h1>
   <p align="center"> Use the form below to input the ids of data points from different systems or versions which you would like to map. You can use the 2 tables below the form to identify the ids of the datapoints that you would like to map.</p>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <a href="#" data-dismiss="alert" class="close">×</a>
+      <ul>
+        <li>
+          <%= value %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
+
       <div class="modal-body row" align = "center">
         <div class="col-md-6">
           <div class="dropdownLeft">
