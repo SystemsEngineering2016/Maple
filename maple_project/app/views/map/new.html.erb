@@ -28,18 +28,23 @@
                 <% end %>
               </ul>
 
-              <table align="center" style="width:50%">
-              <tr>
-                <td><p><b>System:</b> </p></td>
-                <td><p><b>Version:</b>  </p></td>
-              </tr>
-            </table>
+
             </div>
+
+            <div class = "hidden" >  <%= @sysName = Version.where(id: params[:myID]) %> </div>
+            <% @sysName.each do |map| %>
+            <table>
+                <tr><td><p><b>System:</b> <%= System.find(Version.find(map.id).system_id).System_Name %> </p></td></tr>
+                <tr><td>  <p><b>Version:</b> <%=map.Version_Name %> </p></td></tr>
+            <% end %>
+          </table>
+
+
         </div>
 
         <div class="col-md-6">
           <div class="dropdownRight">
-            <p>Choose system 2:</p>
+            <p align = "center">Choose system 2:</p>
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">List of Systems
             <span class="caret"></span></button>
             <ul class="dropdown-menu" id="id1" align="center">
@@ -48,15 +53,17 @@
               <% end %>
             </ul>
 
-            <table align="center" style="width:50%">
-            <tr>
-              <td><p><b>System:</b> </p></td>
-              <td><p><b>Version:</b>  </p></td>
-            </tr>
-          </table>
+
 
           </div>
         </div>
+        <div class = "hidden" >  <%= @sysName = Version.where(id: params[:myID2]) %> </div>
+        <% @sysName.each do |map| %>
+        <table>
+            <tr><td><p><b>System:</b> <%= System.find(Version.find(map.id).system_id).System_Name %> </p></td></tr>
+            <tr><td>  <p><b>Version:</b> <%=map.Version_Name %> </p></td></tr>
+        <% end %>
+      </table>
       </div>
 
 
@@ -67,9 +74,9 @@
 
               <table class="table table-hover" align="center" width="90%">
                 <tr>
-                  <th>Data point id </th>
+                  <!-- <th>Data point id </th>
                   <th>System Name </th>
-                  <th>Version Name </th>
+                  <th>Version Name </th> -->
                   <th>Logical Name </th>
                   <th>Short Name </th>
                   <th>Table Name </th>
@@ -77,9 +84,9 @@
                   <th></th>
                   <th></th>
                   <th></th>
-                  <th>Data point id </th>
+                  <!-- <th>Data point id </th>
                   <th>System Name </th>
-                  <th>Version Name </th>
+                  <th>Version Name </th> -->
                   <th>Logical Name </th>
                   <th>Short Name </th>
                   <th>Table Name </th>
@@ -90,9 +97,9 @@
                 <!-- Below is the List that displays mappings that were created in the opposite (i.e. to-from) direction. -->
               <% @filtered2.each do |map| %>
                 <tr>
-                  <td><%= map.mapto_id%></td>
+                  <!-- <td><%= map.mapto_id%></td>
                   <td><%= System.find(Version.find(map.mapto.version_id).system_id).System_Name %> </td>
-                  <td><%= Version.find(map.mapto.version_id).Version_Name %> </td>
+                  <td><%= Version.find(map.mapto.version_id).Version_Name %> </td> -->
                   <td><%= map.mapto.Logical_Name %></td>
                   <td><%= map.mapto.Short_Name %></td>
                   <td><%= map.mapto.Table_Name %></td>
@@ -100,9 +107,9 @@
                   <td></td>
                   <td ><p style="color:red;">&#x2194</p></td>
                   <td></td>
-                  <td><%= map.mapfrom_id %></td>
+                  <!-- <td><%= map.mapfrom_id %></td>
                   <td><%= System.find(Version.find(map.mapfrom.version_id).system_id).System_Name %> </td>
-                  <td><%= Version.find(map.mapfrom.version_id).Version_Name %> </td>
+                  <td><%= Version.find(map.mapfrom.version_id).Version_Name %> </td> -->
                   <td><%= map.mapfrom.Logical_Name %></td>
                   <td><%= map.mapfrom.Short_Name %></td>
                   <td><%= map.mapfrom.Table_Name %></td>
@@ -114,9 +121,9 @@
               <!-- Below is the List that displays mappings that were created in the current from-to version direction. -->
                 <% @filtered.each do |map| %>
                   <tr>
-                    <td><%= map.mapfrom_id %></td>
+                    <!-- <td><%= map.mapfrom_id %></td>
                     <td><%= System.find(Version.find(map.mapfrom.version_id).system_id).System_Name %> </td>
-                    <td><%= Version.find(map.mapfrom.version_id).Version_Name %> </td>
+                    <td><%= Version.find(map.mapfrom.version_id).Version_Name %> </td> -->
                     <td><%= map.mapfrom.Logical_Name %></td>
                     <td><%= map.mapfrom.Short_Name %></td>
                     <td><%= map.mapfrom.Table_Name %></td>
@@ -124,9 +131,9 @@
                     <td></td>
                     <td ><p style="color:red;">&#x2194</p></td>
                     <td></td>
-                    <td><%= map.mapto_id%></td>
+                    <!-- <td><%= map.mapto_id%></td>
                     <td><%= System.find(Version.find(map.mapto.version_id).system_id).System_Name %> </td>
-                    <td><%= Version.find(map.mapto.version_id).Version_Name %> </td>
+                    <td><%= Version.find(map.mapto.version_id).Version_Name %> </td> -->
                     <td><%= map.mapto.Logical_Name %></td>
                     <td><%= map.mapto.Short_Name %></td>
                     <td><%= map.mapto.Table_Name %></td>
@@ -156,7 +163,7 @@
                 <br>
                 <tr>
                   <th></th>
-                  <th>id</th>
+                  <!-- <th>id</th> -->
                   <th>Logical Name</th>
                   <th>Short Name</th>
                   <th>Table Name</th>
@@ -165,7 +172,7 @@
                 <% @matt.each do |table| %>
                   <tr>
                       <td>  <%= f.radio_button :mapfrom_id, table.id %> </td>
-                      <td><%= table.id%></td>
+                      <!-- <td><%= table.id%></td> -->
                       <td> <%= best_in_place table, :Logical_Name %> </td>
                       <td> <%= best_in_place table, :Short_Name %> </td>
                       <td> <%= best_in_place table, :Table_Name %> </td>
@@ -187,7 +194,7 @@
             <br>
             <tr>
               <th></th>
-              <th>id</th>
+              <!-- <th>id</th> -->
               <th>Logical Name</th>
               <th>Short Name</th>
               <th>Table Name</th>
@@ -197,7 +204,7 @@
               <tr>
 
                   <td>  <%= f.radio_button :mapto_id, table.id %> </td>
-                  <td><%= table.id%></td>
+                  <!-- <td><%= table.id%></td> -->
                   <td> <%= best_in_place table, :Logical_Name %> </td>
                   <td> <%= best_in_place table, :Short_Name %> </td>
                   <td> <%= best_in_place table, :Table_Name %> </td>
