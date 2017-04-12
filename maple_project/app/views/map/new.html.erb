@@ -27,8 +27,16 @@
 
                 <% end %>
               </ul>
+
+              <table align="center" style="width:50%">
+              <tr>
+                <td><p><b>System:</b> </p></td>
+                <td><p><b>Version:</b>  </p></td>
+              </tr>
+            </table>
             </div>
         </div>
+
         <div class="col-md-6">
           <div class="dropdownRight">
             <p>Choose system 2:</p>
@@ -39,9 +47,19 @@
               <li> <%= link_to f.System_Name,  new_version_path(f, :myID1 => params[:myID]) %> </li>
               <% end %>
             </ul>
+
+            <table align="center" style="width:50%">
+            <tr>
+              <td><p><b>System:</b> </p></td>
+              <td><p><b>Version:</b>  </p></td>
+            </tr>
+          </table>
+
           </div>
         </div>
       </div>
+
+
       <div class = "hidden" >  <%= @filtered = Map.where(fromVersionName: params[:myID]).where(toVersionName: params[:myID2]) %> </div>
       <h2 align="center"> Your current mappings </h2>
               <table class="table table-hover" align="center" width="90%">
