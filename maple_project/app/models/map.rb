@@ -8,14 +8,14 @@ class Map < ApplicationRecord
   validates_uniqueness_of :mapfrom_id, :scope => [:mapto_id], :message => "You have already created this mapping "
   validate :check_2versions
   validate :combination_mappings
-  def combination_mappings
-  if Map.exists?(:mapfrom_id => mapto_id,:mapto_id => mapfrom_id)
-      errors.add(:base,"This mapping has already been made but in the opposite direction. To view, swap the systems and versions below.")
-  end
-end
 
   def check_2versions
     errors.add(:Not_Allowed, "to map between datapoints from the same version.") if fromVersionName == toVersionName
   end
 
+  def combination_mappings
+    if Map.exists?(:mapfrom_id => mapto_id,:mapto_id => mapfrom_id)
+        errors.add(:base,"Error: This mapping already exists.")
+      end
+  end
 end
