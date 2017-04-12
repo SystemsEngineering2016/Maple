@@ -33,9 +33,9 @@
 
             <div class = "hidden" >  <%= @sysName = Version.where(id: params[:myID]) %> </div>
             <% @sysName.each do |map| %>
-            <table>
-                <tr><td><p><b>System:</b> <%= System.find(Version.find(map.id).system_id).System_Name %> </p></td></tr>
-                <tr><td>  <p><b>Version:</b> <%=map.Version_Name %> </p></td></tr>
+            <table  >
+                <tr align="center"><td><p><b>Chosen System 1:</b> <%= System.find(Version.find(map.id).system_id).System_Name %> </p></td></tr>
+                <tr align="center"><td>  <p><b>Chosen Version 1:</b> <%=map.Version_Name %> </p></td></tr>
             <% end %>
           </table>
 
@@ -59,9 +59,9 @@
         </div>
         <div class = "hidden" >  <%= @sysName = Version.where(id: params[:myID2]) %> </div>
         <% @sysName.each do |map| %>
-        <table>
-            <tr><td><p><b>System:</b> <%= System.find(Version.find(map.id).system_id).System_Name %> </p></td></tr>
-            <tr><td>  <p><b>Version:</b> <%=map.Version_Name %> </p></td></tr>
+        <table align="center">
+            <tr align="center"><td><p><b>Chosen System 2:</b> <%= System.find(Version.find(map.id).system_id).System_Name %> </p></td></tr>
+            <tr align="center"><td>  <p><b>Chosen Version 2:</b> <%=map.Version_Name %> </p></td></tr>
         <% end %>
       </table>
       </div>
@@ -71,7 +71,7 @@
       <div class = "hidden" >  <%= @filtered2 = Map.where(fromVersionName: params[:myID2]).where(toVersionName: params[:myID]) %> </div>
 
       <h2 align="center"> Your current mappings </h2>
-
+        <p align="center"> Below is the complete list of mappings that have been created between data points from the two versions that you have selected. Data points from the version 1 are shown on the left and data points from the version 2 are shown on the right.</p>
               <table class="table table-hover" align="center" width="90%">
                 <tr>
                   <!-- <th>Data point id </th>
@@ -105,7 +105,7 @@
                   <td><%= map.mapto.Table_Name %></td>
                   <td><%= map.mapto.Column_Name %></td>
                   <td></td>
-                  <td ><p style="color:red;">&#x2194</p></td>
+                  <td title="A bidirectional mapping"><p style="color:red;">&#x2194</p></td>
                   <td></td>
                   <!-- <td><%= map.mapfrom_id %></td>
                   <td><%= System.find(Version.find(map.mapfrom.version_id).system_id).System_Name %> </td>
@@ -129,7 +129,7 @@
                     <td><%= map.mapfrom.Table_Name %></td>
                     <td><%= map.mapfrom.Column_Name %></td>
                     <td></td>
-                    <td ><p style="color:red;">&#x2194</p></td>
+                    <td title="A bidirectional mapping"><p style="color:red;">&#x2194</p></td>
                     <td></td>
                     <!-- <td><%= map.mapto_id%></td>
                     <td><%= System.find(Version.find(map.mapto.version_id).system_id).System_Name %> </td>
@@ -147,7 +147,7 @@
 
  <!-- SECOND HALF -->
  <h2 align="center"> Data Points available to map </h2>
- <p align="center"> Please select one datapoint from each table below before clicking the submit button.</p>
+ <p align="center"> Use the form below to create a new mapping between the data points of the two versions. Please select one datapoint from each table below before clicking the submit button.</p>
  <%= form_for :map, url: map_index_path do |f| %>
 
  <p align="center">
@@ -171,7 +171,7 @@
                 </tr>
                 <% @matt.each do |table| %>
                   <tr>
-                      <td>  <%= f.radio_button :mapfrom_id, table.id %> </td>
+                      <td >  <%= f.radio_button :mapfrom_id, table.id %> </td>
                       <!-- <td><%= table.id%></td> -->
                       <td> <%= best_in_place table, :Logical_Name %> </td>
                       <td> <%= best_in_place table, :Short_Name %> </td>
@@ -203,7 +203,7 @@
             <% @matt.each do |table| %>
               <tr>
 
-                  <td>  <%= f.radio_button :mapto_id, table.id %> </td>
+                  <td >  <%= f.radio_button :mapto_id, table.id %> </td>
                   <!-- <td><%= table.id%></td> -->
                   <td> <%= best_in_place table, :Logical_Name %> </td>
                   <td> <%= best_in_place table, :Short_Name %> </td>
