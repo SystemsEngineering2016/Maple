@@ -72,6 +72,7 @@
 
       <h2 align="center"> Your current mappings </h2>
         <p align="center"> Below is the complete list of mappings that have been created between data points from the two versions that you have selected. Data points from the version 1 are shown on the left and data points from the version 2 are shown on the right.</p>
+        <div class="scrollWrapper1">
               <table class="table table-hover" align="center" width="90%">
                 <tr>
                   <!-- <th>Data point id </th>
@@ -144,6 +145,7 @@
 
 
               </table>
+              </div
 
  <!-- SECOND HALF -->
  <h2 align="center"> Data Points available to map </h2>
@@ -159,8 +161,10 @@
       <div class="modal-body row" align = "center">
         <div class="col-md-6">
               <div class = "hidden" > <%= @matt = Table.where(version_id: params[:myID]) %> </div>
+              <div class="scrollWrapper">
               <table class="table table-hover" align="center" width="80%">
                 <br>
+
                 <tr>
                   <th></th>
                   <!-- <th>id</th> -->
@@ -169,7 +173,10 @@
                   <th>Table Name</th>
                   <th>Column Name</th>
                 </tr>
+
+
                 <% @matt.each do |table| %>
+
                   <tr>
                       <td >  <%= f.radio_button :mapfrom_id, table.id %> </td>
                       <!-- <td><%= table.id%></td> -->
@@ -178,8 +185,11 @@
                       <td> <%= best_in_place table, :Table_Name %> </td>
                       <td> <%= best_in_place table, :Column_Name %> </td>
                   </tr>
+
                 <% end %>
+
               </table>
+            </div>
 
               <!-- <p align="center">
                     Please choose a data point from the dropdown below (Logical_Name displayed): </br>
@@ -190,6 +200,7 @@
         </div>
         <div class="col-md-6">
           <div class = "hidden" >  <%= @matt = Table.where(version_id: params[:myID2]) %> </div>
+          <div class="scrollWrapper">
           <table class="table table-hover" align="center" width="80%">
             <br>
             <tr>
@@ -212,7 +223,7 @@
               </tr>
             <% end %>
           </table>
-
+        </div>
 <!--
           <p align="center">
                 Please choose a data point from the dropdown below (Logical_Name displayed): </br>
