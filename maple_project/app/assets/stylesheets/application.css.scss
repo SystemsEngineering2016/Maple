@@ -63,6 +63,10 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 
 }
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: white;
+    color: black;
+}
 .dropdown-menu {
   background-color: #f5f5f5;
 
@@ -104,7 +108,7 @@ body {
 
  }
 
- 
+
  .table-hover {
   margin-left:auto;
   margin-right:auto;
