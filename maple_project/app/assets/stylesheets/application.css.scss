@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
+
  */
 
  @import "bootstrap-sprockets";
@@ -106,6 +108,27 @@ body {
    line-height: 1.5em;
    letter-spacing: -0.035em;
 
+ }
+ input[type="submit"],
+ .button {
+   background-color: #444;
+   color: white;
+   border-radius: 6px;
+    border-style: solid;
+ }
+
+ input[type="submit"]:hover,
+ input[type="reset"]:hover,
+ input[type="button"]:hover,
+ .button:hover {
+   background-color: #737373;
+ }
+
+ input[type="submit"]:active,
+ input[type="reset"]:active,
+ input[type="button"]:active,
+ .button:active {
+   background-color: #595959;
  }
 
 
