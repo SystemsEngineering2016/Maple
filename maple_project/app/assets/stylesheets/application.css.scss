@@ -111,24 +111,24 @@ body {
  }
  input[type="submit"],
  .button {
-   background-color: #444;
+   background-color: #6A9D9D;
    color: white;
    border-radius: 6px;
-    border-style: solid;
+    border-style: none;
  }
 
  input[type="submit"]:hover,
  input[type="reset"]:hover,
  input[type="button"]:hover,
  .button:hover {
-   background-color: #737373;
+   background-color: #337ab7;
  }
 
  input[type="submit"]:active,
  input[type="reset"]:active,
  input[type="button"]:active,
  .button:active {
-   background-color: #595959;
+   background-color: #337ab7;
  }
 
 
