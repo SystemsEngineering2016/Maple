@@ -17,8 +17,9 @@ respond_to :html, :json
     @version = Version.find(params[:version_id])
     @table = @version.table.create(table_params)
     if @table.save
-        redirect_to version_path(@version)
+        redirect_to version_path(@version), notice: "You have successfully created the new data point."
     else
+      flash.now[:error] = "Could not create the new data point. Check below for more information about the errors."
       render 'new'
     end
 end
@@ -31,7 +32,7 @@ def update
 
   respond_to do |format|
   if @table.update_attributes(table_params)
-    format.html { redirect_to(version_path(@version), :notice => 'User was successfully updated.') }
+    format.html { redirect_to(version_path(@version), :notice => 'Data point was successfully updated.') }
     format.json { respond_with_bip(@table) }
   else
     format.html { render :action => "edit" }
@@ -66,7 +67,7 @@ def destroy
   @table = Table.find(params[:id])
   @version=@table.version
   @table.destroy
-  redirect_to version_path(@version)
+  redirect_to version_path(@version), notice: "You have successfully deleted the data point and its associated mappings."
 end
 
 

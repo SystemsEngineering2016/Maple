@@ -20,7 +20,16 @@
       <%= f.submit %>
     </p>
   <% end %> -->
-
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <a href="#" data-dismiss="alert" class="close">×</a>
+      <ul>
+        <li>
+          <%= value %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
 
   <table  align="center" width="20%">
 

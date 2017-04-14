@@ -20,6 +20,16 @@
 <!-- <button type="button_style" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add a Data Point</button> -->
 <button type="button" class="button_style" data-toggle="modal" data-target="#myModal">Add a Data Point</button>
 </p>
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>">
+    <a href="#" data-dismiss="alert" class="close">×</a>
+    <ul>
+      <li>
+        <%= value %>
+      </li>
+    </ul>
+  </div>
+<% end %>
 
 <div id="constrainer">
 <div class="scrolltable">
@@ -63,7 +73,7 @@
           <td><%= best_in_place table, :Data_Point_Status, :as => :select, collection: [["Active", "Active"], ["Removed", "Removed"], ["Deprecated", "Deprecated"]] %></td>
           <!-- <td><%= link_to 'Delete Data Point', table_path(table),method: :delete,data: { confirm: 'Are you sure?' } %></td> -->
           <!-- <td><input type="checkbox" checked data-toggle="toggle"></td> -->
-          <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, table_path(table),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' , :title => "Delete system.", :title => "Delete data point."%> </td>
+          <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, table_path(table),method: :delete,data: { confirm: 'Are you sure? By choosing to delete this data point, you will be deleting all its mappings as well.' }, class: 'btn btn-custom' , :title => "Delete system.", :title => "Delete data point."%> </td>
       </tr>
     <% end %>
   </tbody>
