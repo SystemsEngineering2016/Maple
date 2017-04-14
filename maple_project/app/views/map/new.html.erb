@@ -1,6 +1,11 @@
 <body>
 
 <div class = "jumbotron">
+  <script>
+  $(document).ready(function() {
+      $('.best_in_place').best_in_place();
+  });
+</script>
   <h1 align="center">Create a New Mapping</h1>
   <p align="center"> Use the form below to input the ids of data points from different systems or versions which you would like to map. You can use the 2 tables below the form to identify the ids of the datapoints that you would like to map.</p>
   <% flash.each do |key, value| %>
@@ -102,9 +107,9 @@
                   <td><%= System.find(Version.find(map.mapto.version_id).system_id).System_Name %> </td>
                   <td><%= Version.find(map.mapto.version_id).Version_Name %> </td> -->
                   <td style="color:blue"><%= map.mapto.Logical_Name %></td>
-                  <td><%= map.mapto.Short_Name %></td>
-                  <td><%= map.mapto.Table_Name %></td>
-                  <td><%= map.mapto.Column_Name %></td>
+                  <td><%= map.mapto.Short_Name.blank?? '-' : map.mapto.Short_Name %></td>
+                  <td><%= map.mapto.Table_Name.blank?? '-' :map.mapto.Table_Name %></td>
+                  <td><%= map.mapto.Column_Name.blank?? '-' :map.mapto.Column_Name %></td>
                   <td></td>
                   <td title="A bidirectional mapping"><p style="color:red;">&#x2194</p></td>
                   <td></td>
@@ -112,9 +117,9 @@
                   <td><%= System.find(Version.find(map.mapfrom.version_id).system_id).System_Name %> </td>
                   <td><%= Version.find(map.mapfrom.version_id).Version_Name %> </td> -->
                   <td style="color:blue"><%= map.mapfrom.Logical_Name %></td>
-                  <td><%= map.mapfrom.Short_Name %></td>
-                  <td><%= map.mapfrom.Table_Name %></td>
-                  <td><%= map.mapfrom.Column_Name %></td>
+                  <td><%= map.mapfrom.Short_Name.blank?? '-' : map.mapfrom.Short_Name %></td>
+                  <td><%= map.mapfrom.Table_Name.blank?? '-' : map.mapfrom.Table_Name %></td>
+                  <td><%= map.mapfrom.Column_Name.blank?? '-' : map.mapfrom.Column_Name %></td>
                   <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, map_path(map),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' , :title => "Delete mapping"%> </td>
                 </tr>
               <% end %>
@@ -126,9 +131,9 @@
                     <td><%= System.find(Version.find(map.mapfrom.version_id).system_id).System_Name %> </td>
                     <td><%= Version.find(map.mapfrom.version_id).Version_Name %> </td> -->
                     <td style="color:blue"><%= map.mapfrom.Logical_Name %></td>
-                    <td><%= map.mapfrom.Short_Name %></td>
-                    <td><%= map.mapfrom.Table_Name %></td>
-                    <td><%= map.mapfrom.Column_Name %></td>
+                    <td><%= map.mapfrom.Short_Name.blank?? '-' : map.mapfrom.Short_Name %></td>
+                    <td><%= map.mapfrom.Table_Name.blank?? '-' : map.mapfrom.Table_Name %></td>
+                    <td><%= map.mapfrom.Column_Name.blank?? '-' : map.mapfrom.Column_Name %></td>
                     <td></td>
                     <td title="A bidirectional mapping"><p style="color:red;">&#x2194</p></td>
                     <td></td>
@@ -136,9 +141,9 @@
                     <td><%= System.find(Version.find(map.mapto.version_id).system_id).System_Name %> </td>
                     <td><%= Version.find(map.mapto.version_id).Version_Name %> </td> -->
                     <td style="color:blue"><%= map.mapto.Logical_Name %></td>
-                    <td><%= map.mapto.Short_Name %></td>
-                    <td><%= map.mapto.Table_Name %></td>
-                    <td><%= map.mapto.Column_Name %></td>
+                    <td><%= map.mapto.Short_Name.blank?? '-' : map.mapto.Short_Name %></td>
+                    <td><%= map.mapto.Table_Name.blank?? '-' : map.mapto.Table_Name %></td>
+                    <td><%= map.mapto.Column_Name.blank?? '-' : map.mapto.Column_Name %></td>
                     <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, map_path(map),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' , :title => "Delete mapping"%> </td>
                   </tr>
                 <% end %>

@@ -57,9 +57,9 @@
       <td><%= System.find(Version.find(map.mapfrom.version_id).system_id).System_Name %> </td>
       <td><%= Version.find(map.mapfrom.version_id).Version_Name %> </td>
       <td><%= map.mapfrom.Logical_Name %></td>
-      <td><%= map.mapfrom.Short_Name %></td>
-      <td><%= map.mapfrom.Table_Name %></td>
-      <td><%= map.mapfrom.Column_Name %></td>
+      <td><%= map.mapfrom.Short_Name.blank?? '-' : map.mapfrom.Short_Name %></td>
+      <td><%= map.mapfrom.Table_Name.blank?? '-' :map.mapfrom.Table_Name %></td>
+      <td><%= map.mapfrom.Column_Name.blank?? '-' :map.mapfrom.Column_Name %></td>
 
 
 
@@ -69,9 +69,9 @@
       <td><%= System.find(Version.find(map.mapto.version_id).system_id).System_Name %> </td>
       <td><%= Version.find(map.mapto.version_id).Version_Name %> </td>
       <td><%= map.mapto.Logical_Name %></td>
-      <td><%= map.mapto.Short_Name %></td>
-      <td><%= map.mapto.Table_Name %></td>
-      <td><%= map.mapto.Column_Name %></td>
+      <td><%= map.mapto.Short_Name.blank?? '-' : map.mapto.Short_Name %></td>
+      <td><%= map.mapto.Table_Name.blank?? '-' : map.mapto.Table_Name %></td>
+      <td><%= map.mapto.Column_Name.blank?? '-' : map.mapto.Column_Name %></td>
       <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, map_path(map),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' , :title => "Delete mapping"%> </td>
 
     </tr>
