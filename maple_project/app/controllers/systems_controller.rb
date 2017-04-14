@@ -40,7 +40,7 @@ end
       # redirect_to @system
       redirect_to systems_path,notice: "You have successfully created a new system."
     else
-      flash.now[:error] = "Could not create the new system. Check below for errors."
+      flash.now[:error] = "Could not create the new system. Check below for more information about the errors."
       render 'new'
     end
   end
@@ -52,7 +52,7 @@ end
     # redirect_to @system
     redirect_to systems_path, notice: "You have successfully updated the system name."
   else
-    flash.now[:error] = "Could not update system name. Check below for errors."
+    flash.now[:error] = "Could not update system name. Check below for more information about the errors."
     render 'edit'
   end
   end

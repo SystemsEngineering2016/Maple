@@ -1,6 +1,18 @@
 <body>
 <div class = "jumbotron">
   <h1 align="center">Edit this Version</h1>
+
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <a href="#" data-dismiss="alert" class="close">×</a>
+      <ul>
+        <li>
+          <%= value %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
+
   <%= form_for :version, url: version_path(@version), method: :patch do |f| %>
   <% if @version.errors.any? %>
   <div id="error_explanation">
@@ -28,6 +40,9 @@
     <%= f.submit %>
   </p>
 
+    <br>
+    <br>
+    <p align="center"><%= link_to 'List of Versions for this system', system_path(@system) %></p>
 <% end %>
 </div>
 </body>

@@ -2,6 +2,17 @@
 
 <div class = "jumbotron">
   <h2 align="center">Add a new version to System "<%= @system.System_Name %>" below</h2>
+
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <a href="#" data-dismiss="alert" class="close">×</a>
+      <ul>
+        <li>
+          <%= value %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
   <br>
 
   <%= form_for([@system, @system.versions.build]) do |f| %>

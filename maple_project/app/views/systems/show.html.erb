@@ -6,6 +6,17 @@
 
     <p align="center"> Add, edit or delete versions for "<%= @system.System_Name %>". Click on a version below to view its data points.</p>
 
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <a href="#" data-dismiss="alert" class="close">×</a>
+        <ul>
+          <li>
+            <%= value %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+
     <table class="table table-hover"align="center" width="90%">
       <br>
       <tr>
@@ -21,7 +32,7 @@
             <!-- <td><input type="checkbox" checked data-toggle="toggle"></td> -->
             <td><%= check_box_tag :active, version.id, version.active, :disabled => true , :title => "Active status of version. Click on edit button to edit active status." %></td>
             <td> <%= link_to '<i class="glyphicon glyphicon-edit"></i> '.html_safe, edit_version_path(version), class: 'btn btn-custom', :title => "Edit version name or its active status" %>
-            <%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, version_path(version),method: :delete,data: { confirm: 'Are you sure?' } , class: 'btn btn-custom', :title => "Delete version."  %> </td>
+            <%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, version_path(version),method: :delete,data: { confirm: 'Are you sure? By choosing to delete this version, you will be deleting all the data points and mappings that belong to this system.' } , class: 'btn btn-custom', :title => "Delete version."  %> </td>
 
 
         </tr>
