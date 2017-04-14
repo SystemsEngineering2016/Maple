@@ -28,7 +28,7 @@
     <br>
     <thead>
     <tr>
-      <th >Logical Name</th>
+      <th style="color:blue">Logical Name</th>
       <th >Short Name</th>
       <th >Table Name</th>
       <th >Column Name</th>
@@ -50,7 +50,7 @@
     <% @version.table.each do |table| %>
 
       <tr>
-          <td> <%= best_in_place table, :Logical_Name , :html_attrs => { :style => 'width:120px' }, :as => :textarea%> </td>
+          <td style="color:blue"> <%= best_in_place table, :Logical_Name , :html_attrs => { :style => 'width:120px' }, :as => :textarea%> </td>
           <td> <%= best_in_place table, :Short_Name, :html_attrs => { :style => 'width:120px'}, :as => :textarea, place_holder: '-' %> </td>
           <td > <%= best_in_place table, :Table_Name, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
           <td > <%= best_in_place table, :Column_Name, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
