@@ -83,7 +83,7 @@
                   <!-- <th>Data point id </th>
                   <th>System Name </th>
                   <th>Version Name </th> -->
-                  <th style="color:blue">Logical Name </th>
+                  <th style="color:#337ab7">Logical Name </th>
                   <th>Short Name </th>
                   <th>Table Name </th>
                   <th>Column Name </th>
@@ -93,7 +93,7 @@
                   <!-- <th>Data point id </th>
                   <th>System Name </th>
                   <th>Version Name </th> -->
-                  <th style="color:blue">Logical Name </th>
+                  <th style="color:#337ab7">Logical Name </th>
                   <th>Short Name </th>
                   <th>Table Name </th>
                   <th>Column Name </th>
@@ -106,8 +106,8 @@
                   <!-- <td><%= map.mapto_id%></td>
                   <td><%= System.find(Version.find(map.mapto.version_id).system_id).System_Name %> </td>
                   <td><%= Version.find(map.mapto.version_id).Version_Name %> </td> -->
-                  <td style="color:blue" ><%= map.mapto.Logical_Name %></td>
-                  <td title="short name"><%= map.mapto.Short_Name.blank?? '-' : map.mapto.Short_Name %></td>
+                  <td style="color:#337ab7" ><%= map.mapto.Logical_Name %></td>
+                  <td><%= map.mapto.Short_Name.blank?? '-' : map.mapto.Short_Name %></td>
                   <td><%= map.mapto.Table_Name.blank?? '-' : map.mapto.Table_Name %></td>
                   <td><%= map.mapto.Column_Name.blank?? '-' : map.mapto.Column_Name %></td>
                   <td></td>
@@ -116,7 +116,7 @@
                   <!-- <td><%= map.mapfrom_id %></td>
                   <td><%= System.find(Version.find(map.mapfrom.version_id).system_id).System_Name %> </td>
                   <td><%= Version.find(map.mapfrom.version_id).Version_Name %> </td> -->
-                  <td style="color:blue"><%= map.mapfrom.Logical_Name %></td>
+                  <td style="color:#337ab7"><%= map.mapfrom.Logical_Name %></td>
                   <td><%= map.mapfrom.Short_Name.blank?? '-' : map.mapfrom.Short_Name %></td>
                   <td><%= map.mapfrom.Table_Name.blank?? '-' : map.mapfrom.Table_Name %></td>
                   <td><%= map.mapfrom.Column_Name.blank?? '-' : map.mapfrom.Column_Name %></td>
@@ -130,7 +130,7 @@
                     <!-- <td><%= map.mapfrom_id %></td>
                     <td><%= System.find(Version.find(map.mapfrom.version_id).system_id).System_Name %> </td>
                     <td><%= Version.find(map.mapfrom.version_id).Version_Name %> </td> -->
-                    <td style="color:blue"><%= map.mapfrom.Logical_Name %></td>
+                    <td style="color:#337ab7"><%= map.mapfrom.Logical_Name %></td>
                     <td><%= map.mapfrom.Short_Name.blank?? '-' : map.mapfrom.Short_Name %></td>
                     <td><%= map.mapfrom.Table_Name.blank?? '-' : map.mapfrom.Table_Name %></td>
                     <td><%= map.mapfrom.Column_Name.blank?? '-' : map.mapfrom.Column_Name %></td>
@@ -140,7 +140,7 @@
                     <!-- <td><%= map.mapto_id%></td>
                     <td><%= System.find(Version.find(map.mapto.version_id).system_id).System_Name %> </td>
                     <td><%= Version.find(map.mapto.version_id).Version_Name %> </td> -->
-                    <td style="color:blue"><%= map.mapto.Logical_Name %></td>
+                    <td style="color:#337ab7"><%= map.mapto.Logical_Name %></td>
                     <td><%= map.mapto.Short_Name.blank?? '-' : map.mapto.Short_Name %></td>
                     <td><%= map.mapto.Table_Name.blank?? '-' : map.mapto.Table_Name %></td>
                     <td><%= map.mapto.Column_Name.blank?? '-' : map.mapto.Column_Name %></td>
@@ -175,7 +175,7 @@
                 <tr>
                   <th></th>
                   <!-- <th>id</th> -->
-                  <th style="color:blue">Logical Name</th>
+                  <th style="color:#337ab7">Logical Name</th>
                   <th>Short Name</th>
                   <th>Table Name</th>
                   <th>Column Name</th>
@@ -187,7 +187,7 @@
                   <tr>
                       <td>  <%= f.radio_button :mapfrom_id, table.id %> </td>
                       <!-- <td><%= table.id%></td> -->
-                      <td style="color:blue"> <%= table.Logical_Name %> </td>
+                      <td style="color:#337ab7"> <%= table.Logical_Name %> </td>
                       <td> <%= table.Short_Name.blank?? '-' : table.Short_Name %> </td>
                       <td> <%= table.Table_Name.blank?? '-' : table.Table_Name %> </td>
                       <td> <%= table.Column_Name.blank?? '-' : table.Column_Name %> </td>
@@ -213,7 +213,7 @@
             <tr>
               <th></th>
               <!-- <th>id</th> -->
-              <th style="color:blue">Logical Name</th>
+              <th style="color:#337ab7">Logical Name</th>
               <th>Short Name</th>
               <th>Table Name</th>
               <th>Column Name</th>
@@ -223,7 +223,7 @@
 
                   <td >  <%= f.radio_button :mapto_id, table.id %> </td>
                   <!-- <td><%= table.id%></td> -->
-                  <td style="color:blue"> <%= table.Logical_Name%> </td>
+                  <td style="color:#337ab7"> <%= table.Logical_Name%> </td>
                   <td> <%= table.Short_Name.blank?? '-' : table.Short_Name%> </td>
                   <td> <%= table.Table_Name.blank?? '-' : table.Table_Name%> </td>
                   <td> <%= table.Column_Name.blank?? '-' :table.Column_Name %> </td>
