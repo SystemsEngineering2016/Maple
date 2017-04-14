@@ -108,8 +108,8 @@
                   <td><%= Version.find(map.mapto.version_id).Version_Name %> </td> -->
                   <td style="color:blue"><%= map.mapto.Logical_Name %></td>
                   <td><%= map.mapto.Short_Name.blank?? '-' : map.mapto.Short_Name %></td>
-                  <td><%= map.mapto.Table_Name.blank?? '-' :map.mapto.Table_Name %></td>
-                  <td><%= map.mapto.Column_Name.blank?? '-' :map.mapto.Column_Name %></td>
+                  <td><%= map.mapto.Table_Name.blank?? '-' : map.mapto.Table_Name %></td>
+                  <td><%= map.mapto.Column_Name.blank?? '-' : map.mapto.Column_Name %></td>
                   <td></td>
                   <td title="A bidirectional mapping"><p style="color:red;">&#x2194</p></td>
                   <td></td>
@@ -187,10 +187,10 @@
                   <tr>
                       <td>  <%= f.radio_button :mapfrom_id, table.id %> </td>
                       <!-- <td><%= table.id%></td> -->
-                      <td style="color:blue"> <%= best_in_place table, :Logical_Name %> </td>
-                      <td> <%= best_in_place table, :Short_Name %> </td>
-                      <td> <%= best_in_place table, :Table_Name %> </td>
-                      <td> <%= best_in_place table, :Column_Name %> </td>
+                      <td style="color:blue"> <%= table.Logical_Name %> </td>
+                      <td> <%= table.Short_Name.blank?? '-' : table.Short_Name %> </td>
+                      <td> <%= table.Table_Name.blank?? '-' : table.Table_Name %> </td>
+                      <td> <%= table.Column_Name.blank?? '-' : table.Column_Name %> </td>
                   </tr>
 
                 <% end %>
@@ -223,10 +223,10 @@
 
                   <td >  <%= f.radio_button :mapto_id, table.id %> </td>
                   <!-- <td><%= table.id%></td> -->
-                  <td style="color:blue"> <%= best_in_place table, :Logical_Name %> </td>
-                  <td> <%= best_in_place table, :Short_Name %> </td>
-                  <td> <%= best_in_place table, :Table_Name %> </td>
-                  <td> <%= best_in_place table, :Column_Name %> </td>
+                  <td style="color:blue"> <%= table.Logical_Name%> </td>
+                  <td> <%= table.Short_Name.blank?? '-' : table.Short_Name%> </td>
+                  <td> <%= table.Table_Name.blank?? '-' : table.Table_Name%> </td>
+                  <td> <%= table.Column_Name.blank?? '-' :table.Column_Name %> </td>
               </tr>
             <% end %>
           </table>
