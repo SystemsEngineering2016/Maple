@@ -106,8 +106,8 @@
                   <!-- <td><%= map.mapto_id%></td>
                   <td><%= System.find(Version.find(map.mapto.version_id).system_id).System_Name %> </td>
                   <td><%= Version.find(map.mapto.version_id).Version_Name %> </td> -->
-                  <td style="color:blue"><%= map.mapto.Logical_Name %></td>
-                  <td><%= map.mapto.Short_Name.blank?? '-' : map.mapto.Short_Name %></td>
+                  <td style="color:blue" ><%= map.mapto.Logical_Name %></td>
+                  <td title="short name"><%= map.mapto.Short_Name.blank?? '-' : map.mapto.Short_Name %></td>
                   <td><%= map.mapto.Table_Name.blank?? '-' : map.mapto.Table_Name %></td>
                   <td><%= map.mapto.Column_Name.blank?? '-' : map.mapto.Column_Name %></td>
                   <td></td>
