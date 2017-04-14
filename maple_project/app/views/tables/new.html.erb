@@ -38,13 +38,13 @@
 
       <% if @table.errors.any? %>
       <div id="error_explanation">
-        <h2>
+        <h2 style="color:red;">
           <%= pluralize(@table.errors.count, "error") %> prohibited
           this data point from being saved:
         </h2>
-        <ul>
+        <ul style="color:red;">
           <% @table.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
+            <li style="color:red;"><%= msg %></li>
           <% end %>
         </ul>
       </div>
@@ -101,6 +101,8 @@
     <%= f.submit "Create Data Point" %>
   </p>
 <% end %>
+<br>
 
+<p align="center"><%= link_to 'Back', version_path(@version) %></p>
 </div>
 </body>

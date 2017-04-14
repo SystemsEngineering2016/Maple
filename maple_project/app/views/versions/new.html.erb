@@ -19,13 +19,13 @@
 
   <% if @version.errors.any? %>
   <div id="error_explanation">
-    <h2>
+    <h2 style="color:red;">
       <%= pluralize(@version.errors.count, "error") %> prohibited
       this version from being saved:
     </h2>
-    <ul>
+    <ul style="color:red;">
       <% @version.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li style="color:red;"><%= msg %></li>
       <% end %>
     </ul>
   </div>

@@ -2,13 +2,13 @@
   <%= form_for @system do |f| %>
   <% if @system.errors.any? %>
     <div id="error_explanation">
-      <h2>
+      <h2 style="color:red;">
         <%= pluralize(@system.errors.count, "error") %> prohibited
         this system from being saved:
       </h2>
-      <ul>
+      <ul style="color:red;">
         <% @system.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+          <li style="color:red;"><%= msg %></li>
         <% end %>
       </ul>
     </div>

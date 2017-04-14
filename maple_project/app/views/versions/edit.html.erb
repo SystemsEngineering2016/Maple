@@ -16,13 +16,13 @@
   <%= form_for :version, url: version_path(@version), method: :patch do |f| %>
   <% if @version.errors.any? %>
   <div id="error_explanation">
-    <h2>
+    <h2 style="color:red;">
       <%= pluralize(@version.errors.count, "error") %> prohibited
       this version from being saved:
     </h2>
-    <ul>
+    <ul style="color:red;">
       <% @version.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li style="color:red;"><%= msg %></li>
       <% end %>
     </ul>
   </div>
@@ -41,7 +41,7 @@
   </p>
 
     <br>
-    
+
     <p align="center"><%= link_to 'List of Versions for this system', system_path(@system) %></p>
 <% end %>
 </div>
