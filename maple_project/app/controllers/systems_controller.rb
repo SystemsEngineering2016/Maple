@@ -37,8 +37,10 @@ end
     @system = System.new(system_params)
 
     if @system.save
-      redirect_to @system
+      # redirect_to @system
+      redirect_to systems_path,notice: "You have successfully created a new system."
     else
+      flash.now[:error] = "Could not create the new system. Check below for errors."
       render 'new'
     end
   end
@@ -47,8 +49,10 @@ end
   @system = System.find(params[:id])
 
   if @system.update(system_params)
-    redirect_to @system
+    # redirect_to @system
+    redirect_to systems_path, notice: "You have successfully updated the system name."
   else
+    flash.now[:error] = "Could not update system name. Check below for errors."
     render 'edit'
   end
   end
@@ -58,7 +62,7 @@ end
     @system = System.find(params[:id])
     @system.destroy
 
-    redirect_to systems_path
+    redirect_to systems_path,notice: "You have successfully deleted the system and all its associated versions, data points and mappings."
   end
 
   private

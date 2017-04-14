@@ -1,6 +1,16 @@
 <body>
 <div class = "jumbotron">
   <h1 align="center">Edit this Version</h1>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <a href="#" data-dismiss="alert" class="close">×</a>
+      <ul>
+        <li>
+          <%= value %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
   <%= render 'form' %>
   <p align="center"><%= link_to 'Back', systems_path %></p>
 </div>
