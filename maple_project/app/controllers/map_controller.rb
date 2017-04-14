@@ -47,6 +47,6 @@ end
 
   private
     def map_params
-      params.require(:map).permit(:mapfrom_id, :mapto_id, :fromVersionName, :toVersionName)
+      params.require(:map).permit(:mapfrom_id, :mapto_id, :fromVersionName, :toVersionName, :map_comment)
     end
 end

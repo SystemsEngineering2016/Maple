@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170411104258) do
+ActiveRecord::Schema.define(version: 20170414183957) do
 
   create_table "maps", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "mapfrom_id"
     t.integer "mapto_id"
     t.string  "fromVersionName"
     t.string  "toVersionName"
+    t.string  "map_comment"
     t.index ["mapfrom_id"], name: "index_maps_on_mapfrom_id", using: :btree
     t.index ["mapto_id"], name: "index_maps_on_mapto_id", using: :btree
   end

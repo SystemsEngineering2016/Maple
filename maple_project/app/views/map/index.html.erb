@@ -38,7 +38,7 @@
     <th>Short Name </th>
     <th>Table Name </th>
     <th>Column Name </th>
-
+    <th>Mapping Comment</th>
 
 
     <th></th>
@@ -72,6 +72,7 @@
       <td><%= map.mapto.Short_Name.blank?? '-' : map.mapto.Short_Name %></td>
       <td><%= map.mapto.Table_Name.blank?? '-' : map.mapto.Table_Name %></td>
       <td><%= map.mapto.Column_Name.blank?? '-' : map.mapto.Column_Name %></td>
+      <td><%= map.map_comment.blank?? '-' : map.map_comment %></td>
       <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, map_path(map),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' , :title => "Delete mapping"%> </td>
 
     </tr>
