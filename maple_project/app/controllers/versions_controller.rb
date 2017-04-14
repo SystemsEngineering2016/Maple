@@ -1,4 +1,5 @@
 class VersionsController < ApplicationController
+respond_to :html, :json
   def new
     @system = System.find(params[:system_id])
     @version = Version.new

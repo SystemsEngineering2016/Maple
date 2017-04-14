@@ -1,5 +1,5 @@
 class TablesController < ApplicationController
-
+respond_to :html, :json
   def new
     @version = Version.find(params[:version_id])
   end

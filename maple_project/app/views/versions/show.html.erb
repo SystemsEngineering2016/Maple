@@ -1,6 +1,10 @@
 <body>
-
 <div class = "jumbotron">
+  <script>
+  $(document).ready(function() {
+      $('.best_in_place').best_in_place();
+  });
+</script>
   <h1 align="center">Data Point Display</h1>
 
 
@@ -47,7 +51,7 @@
 
       <tr>
           <td> <%= best_in_place table, :Logical_Name , :html_attrs => { :style => 'width:120px' }, :as => :textarea%> </td>
-          <td> <%= best_in_place table, :Short_Name, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
+          <td> <%= best_in_place table, :Short_Name, :html_attrs => { :style => 'width:120px'}, :as => :textarea, place_holder: '-' %> </td>
           <td > <%= best_in_place table, :Table_Name, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
           <td > <%= best_in_place table, :Column_Name, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
           <td> <%= best_in_place table, :Data_Type,:as => :select, collection: [["TEXT", "TEXT"], ["NUMBER", "NUMBER"], ["DATE", "DATE"]]  %> </td>
