@@ -28,10 +28,12 @@ end
 def update
   @table= Table.find(params[:id])
   @version=@table.version
-
+  # @table.update_attributes(table_params)
+  # respond_with @table
 
   respond_to do |format|
   if @table.update_attributes(table_params)
+    # flash[:notice] = "Data point has been updated."
     format.html { redirect_to(version_path(@version), :notice => 'Data point was successfully updated.') }
     format.json { respond_with_bip(@table) }
   else

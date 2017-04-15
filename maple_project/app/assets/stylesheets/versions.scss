@@ -113,3 +113,14 @@ border-left: 1px solid #000000;
 border-right: 1px solid #000000;
 border-bottom: 1px solid #000000;
 }
+
+.purr {
+  position: fixed;
+  top: 70px;
+  right: 100px;
+  width: 250px;
+  padding: 20px;
+  background-color: #FCC;
+  border: solid 2px #C66;
+  &:first-letter { text-transform: uppercase; }
+}
