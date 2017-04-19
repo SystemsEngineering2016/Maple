@@ -1,3 +1,91 @@
+<body>
+
 <div class = "jumbotron">
-  <h1 align="center">Mapping Page</h1>
+  <script>
+  $(document).ready(function() {
+      $('.best_in_place').best_in_place();
+  });
+</script>
+  <h1 align="center"> View All Mappings</h1>
+    <p align="center"> Below is the complete list of mappings that have been created. They are listed in order of creation. You can view, edit or delete mappings.</p>
+<!-- <p align = "center"><%= link_to '<i class="glyphicon glyphicon-plus"></i> '.html_safe, new_map_path, class: 'btn btn-custom' , :title => "Add a new mapping"%> </p> -->
+  <p align="center"><%= link_to new_map_path, class: "button_style" do %> Create a new mapping  <% end %></p>
+
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>">
+    <a href="#" data-dismiss="alert" class="close">×</a>
+    <ul>
+      <li>
+        <%= value %>
+      </li>
+    </ul>
+  </div>
+<% end %>
+<div class="scrollWrapper1">
+<table class="table table-hover" align="center" width="90%">
+  <tr>
+    <!-- <th>Data point id </th> -->
+    <th>System Name </th>
+    <th>Version Name </th>
+    <th>Logical Name </th>
+    <th>Short Name </th>
+    <th>Table Name </th>
+    <th>Column Name </th>
+
+
+
+    <th></th>
+
+    <!-- <th>Data point id </th> -->
+    <th>System Name </th>
+    <th>Version Name </th>
+    <th>Logical Name </th>
+    <th>Short Name </th>
+    <th>Table Name </th>
+    <th>Column Name </th>
+    <th>Mapping Comment</th>
+
+
+    <th></th>
+  </tr>
+
+
+
+
+
+  <div class = "hidden" >  <%= @matt = Map.where(fromVersionName: "123") %> </div>
+
+
+  <% @maps.each do |map| %>
+    <tr>
+      <!-- <td><%= map.mapfrom_id %></td> -->
+      <td><%= System.find(Version.find(map.mapfrom.version_id).system_id).System_Name %> </td>
+      <td><%= Version.find(map.mapfrom.version_id).Version_Name %> </td>
+      <td><%= map.mapfrom.Logical_Name %></td>
+      <td><%= map.mapfrom.Short_Name.blank?? '-' : map.mapfrom.Short_Name %></td>
+      <td><%= map.mapfrom.Table_Name.blank?? '-' : map.mapfrom.Table_Name %></td>
+      <td><%= map.mapfrom.Column_Name.blank?? '-' : map.mapfrom.Column_Name %></td>
+
+
+
+      <td title="A bidirectional mapping"><p style="color:red;">&#x2194</p></td>
+
+      <!-- <td><%= map.mapto_id%></td> -->
+      <td><%= System.find(Version.find(map.mapto.version_id).system_id).System_Name %> </td>
+      <td><%= Version.find(map.mapto.version_id).Version_Name %> </td>
+      <td><%= map.mapto.Logical_Name %></td>
+      <td><%= map.mapto.Short_Name.blank?? '-' : map.mapto.Short_Name %></td>
+      <td><%= map.mapto.Table_Name.blank?? '-' : map.mapto.Table_Name %></td>
+      <td><%= map.mapto.Column_Name.blank?? '-' : map.mapto.Column_Name %></td>
+      <td><%= map.map_comment.blank?? '-' : map.map_comment %></td>
+      <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, map_path(map),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' , :title => "Delete mapping"%> </td>
+
+    </tr>
+  <% end %>
+</table>
 </div>
+
+
+</div>
+
+</body>

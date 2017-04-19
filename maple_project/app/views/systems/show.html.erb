@@ -2,24 +2,44 @@
 
 <div class = "jumbotron">
 
-    <h1 align="center">Versions of "<%= @system.System_Name %>"</h2>
+    <h1 align="center">Versions of "<%=@system.System_Name%>"</h2>
+
     <p align="center"> Add, edit or delete versions for "<%= @system.System_Name %>". Click on a version below to view its data points.</p>
-    <table class="table table-hover"align="center" width="80%">
+
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <a href="#" data-dismiss="alert" class="close">×</a>
+        <ul>
+          <li>
+            <%= value %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+
+    <table class="table table-hover"align="center" width="90%">
       <br>
       <tr>
+        <td><b>Versions</b></td>
+        <td><b>Active</b></td>
+        <td></td>
       </tr>
-      <p align = "center"><%= link_to '<i class="glyphicon glyphicon-plus"></i> '.html_safe, new_system_version_path(@system), class: 'btn btn-custom' %> </p>
+      <p align = "center"><%= link_to '<i class="glyphicon glyphicon-plus"></i> '.html_safe, new_system_version_path(@system), class: 'btn btn-custom', :title => "Add a new version to this system." %> </p>
 
       <% @system.versions.each do |version| %>
         <tr>
-            <td><%= link_to version.Version_Name,  version_path(version)%></td>
-            <td> <%= link_to '<i class="glyphicon glyphicon-edit"></i> '.html_safe, new_version_table_path(version), class: 'btn btn-custom' %>
-            <%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, version_path(version),method: :delete,data: { confirm: 'Are you sure?' } , class: 'btn btn-custom' %> </td>
+            <td><%= link_to version.Version_Name,  version_path(version) , :title => "Click to view the data points of the version."%></td>
+            <!-- <td><input type="checkbox" checked data-toggle="toggle"></td> -->
+            <td><%= check_box_tag :active, version.id, version.active, :disabled => true , :title => "Active status of version. Click on edit button to edit active status." %></td>
+            <td> <%= link_to '<i class="glyphicon glyphicon-edit"></i> '.html_safe, edit_version_path(version), class: 'btn btn-custom', :title => "Edit version name or its active status" %>
+            <%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, version_path(version),method: :delete,data: { confirm: 'Are you sure? By choosing to delete this version, you will be deleting all the data points and mappings that belong to this version.' } , class: 'btn btn-custom', :title => "Delete version."  %> </td>
 
 
         </tr>
       <% end %>
     </table>
+
+
     <br>
     <br>
 

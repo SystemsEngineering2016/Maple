@@ -1,54 +1,120 @@
 <body>
-
 <div class = "jumbotron">
+  <script>
+  $(document).ready(function() {
+      $('.best_in_place').best_in_place();
+  }); 
+</script>
   <h1 align="center">Data Point Display</h1>
+
+
 
   <table align="center" style="width:50%">
   <tr>
-    <td><b>System:</b>...</td>
-    <td><b>Version:</b> <%= @version.Version_Name %></td>
+    <td><p><b>System:</b> <%= @system.System_Name %> </p></td>
+    <td><p><b>Version:</b> <%= @version.Version_Name %> </p></td>
   </tr>
 </table>
-</br>
+<p align="center"> Below are all the data points for the chosen version. You are able to add, edit and delete data points all on this page. Edit data points by clicking on the wanted cells in the table below.</p>
+<p align="center">
+<!-- <button type="button_style" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add a Data Point</button> -->
+<button type="button" class="button_style" data-toggle="modal" data-target="#myModal">Add a Data Point</button>
+</p>
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>">
+    <a href="#" data-dismiss="alert" class="close">×</a>
+    <ul>
+      <li>
+        <%= value %>
+      </li>
+    </ul>
+  </div>
+<% end %>
 
+<div id="constrainer">
+<div class="scrolltable">
+<table class="header" style="border-spacing: 0px;">
 
-  <table align="center" width="80%">
     <br>
+    <thead>
     <tr>
-      <th>Version</th>
-      <th>Table name</th>
-      <th>Column name</th>
-      <th>Data type</th>
-      <th>Display Width</th>
-      <th>Display Height</th>
-      <th>Display Prompt</th>
-      <th>Display_Short_Prompt</th>
-      <th>Implementation Comment</th>
-
+      <th style="color:#337ab7">Logical Name</th>
+      <th >Short Name</th>
+      <th >Table Name</th>
+      <th >Column Name</th>
+      <th >Data type</th>
+      <th >Display Width</th>
+      <th >Display Height</th>
+      <th >Display Prompt</th>
+      <th >Implementation Comment</th>
+      <th >Data Point Status</th>
+      <th></th>
+      <!-- <th>Active</th> -->
     </tr>
+  </thead>
+</table>
+<div class="body">
+  <table style="border-spacing: 0px;">
+
+    <tbody >
     <% @version.table.each do |table| %>
+
       <tr>
-          <td><%= @version.Version_Name %></td>
-          <td><%= table.Table_Name %></td>
-          <td><%= table.Column_Name %></td>
-          <td><%= table.Data_Type %></td>
-          <td><%= table.Display_Width %></td>
-          <td><%= table.Display_Height %></td>
-          <td><%= table.Display_Prompt %></td>
-          <td><%= table.Display_Short_Prompt %></td>
-          <td><%= table.Implementation_Comment %></td>
+          <td style="color:#337ab7"> <%= best_in_place table, :Logical_Name , :html_attrs => { :style => 'width:120px' }, :as => :textarea%> </td>
+          <td> <%= best_in_place table, :Short_Name, :html_attrs => { :style => 'width:120px'}, :as => :textarea, place_holder: '-' %> </td>
+          <td > <%= best_in_place table, :Table_Name, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
+          <td > <%= best_in_place table, :Column_Name, :html_attrs => { :style => 'width:120px' }, :as => :textarea %> </td>
+          <td> <%= best_in_place table, :Data_Type,:as => :select, collection: [["TEXT", "TEXT"], ["NUMBER", "NUMBER"], ["DATE", "DATE"]]  %> </td>
+          <td> <%= best_in_place table, :Display_Width , :html_attrs => { size: 5 } %> </td>
+          <td> <%= best_in_place table, :Display_Height, :html_attrs => { size: 5 }  %> </td>
+          <td > <%= best_in_place table, :Display_Prompt, :html_attrs => { :style => 'width:110px' }, :as => :textarea, :as => :textarea  %> </td>
+          <td > <%= best_in_place table, :Implementation_Comment, :html_attrs => { :style => 'width:120px' }, :as => :textarea, :as => :textarea %> </td>
+          <!-- <td><%= table.Data_Point_Status%></td> -->
+          <td><%= best_in_place table, :Data_Point_Status, :as => :select, collection: [["Active", "Active"], ["Removed", "Removed"], ["Deprecated", "Deprecated"]] %></td>
           <!-- <td><%= link_to 'Delete Data Point', table_path(table),method: :delete,data: { confirm: 'Are you sure?' } %></td> -->
-          <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, table_path(table),method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-custom' %> </td>
+          <!-- <td><input type="checkbox" checked data-toggle="toggle"></td> -->
+          <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> '.html_safe, table_path(table),method: :delete,data: { confirm: 'Are you sure? By choosing to delete this data point, you will be deleting all its mappings as well.' }, class: 'btn btn-custom' , :title => "Delete system.", :title => "Delete data point."%> </td>
       </tr>
     <% end %>
+  </tbody>
   </table>
+</div>
+</div>
+</div>
+
+
+
+
+
+  <!-- Trigger the modal with a button -->
+
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title" align="center">Add a New Data Point</h3>
+        </div>
+        <div class="modal-body">
+          <%= render "tables/form3", :version => @version %>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
 
 
   <br>
   <br>
-  <p align="center">
+
+  <!-- <p align="center">
     <%= link_to 'Add a New Data Point', new_version_table_path(@version) %>
-  </p>
+  </p> -->
 
 
 </div>

@@ -3,11 +3,51 @@
 <body>
 <div class = "jumbotron">
   <div class="container">
-  <h2 align="center">Welcome to Maple, a data dictionary editor and data mapping tool</h2>
-  <br>
-  <p align="center">
-    <%= link_to 'Create A New System', new_system_path %>
-  </p>
+  <h1 align="center">Welcome To Maple</h1>
+  <h2 align="center">Introducing the all in one data dictionary editor and data mapping tool</h2>
+  <!-- <p algin="center">
+    A web application that uses Ruby on Rails and MySQL to construct documentation for a given database system in the form of a data dictionary, then provide mapping between separate data points of different versions of the same system, or seperate but related systems.
+  </p> -->
+
+  <section class="box special features">
+						<h2>  Key Features </h2>
+
+						<div class="features-row">
+							<section>
+								<span class="icon major fa-pencil-square-o accent1"></span>
+								<p>Maple provides the ability to add and edit systems for data dictionaries</p>
+                <%= link_to 'Create A New System', new_system_path %>
+
+							</section>
+              <section>
+                <span class="icon major fa-code-fork accent1"></span>
+                <p>Maple also provides the ability to handle different versions of data dictonaries</p>
+                <%= link_to 'View Versions', version_view_path %>
+
+              </section>
+
+
+						</div>
+						<div class="features-row">
+              <section>
+                <span class="icon major fa-map accent2"></span>
+                <p>You can easily create mappings between different data points</p>
+                <%= link_to 'Create new mapping', new_map_path %>
+
+
+
+
+              </section>
+
+            <section>
+                <span class="icon major fa-info-circle accent2"></span>
+                <p>The user will be able to define and edit data points for a data dictionary that they are editing</p>
+          </section>
+
+						</div>
+
+					</section>
+
 </div>
 </div>
 </body>

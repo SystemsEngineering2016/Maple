@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
+
  */
 
  @import "bootstrap-sprockets";
@@ -25,22 +27,50 @@
 
  }
 
+ .btn-custom1 {
+   background-color: #D5E1FA;
+ }
+
+
+
 body {
   padding: 100px;
-  background-color: #9DB0DA;
+  background-color: #f5f5f5;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .jumbotron {
-  background-color: #D5E1FA;
-  border-radius: 25px;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 50px;
+}
+
+.jumbotron h1, h2, p{
+  background-color: #fff;
+  border-radius: 6px;
+  color: #646464;
+  font-weight: 300;
+  margin: 0 0 0.5em 0;
+  line-height: 1.5em;
+  letter-spacing: -0.035em;
 }
 
 .navbar {
-  background-color: #D5E1FA;
+  background-color: #444;
+  font-family: "Source Sans Pro", sans-serif;
 }
+.navbar-default .navbar-nav > li > a {
+  color: white;
+  font-weight: 300;
+  font-family: "Source Sans Pro", sans-serif;
 
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: white;
+    color: black;
+}
 .dropdown-menu {
-  background-color: #D5E1FA;
+  background-color: #f5f5f5;
 
 }
  .top-buffer { margin-top:20px; }
@@ -51,6 +81,55 @@ body {
      text-align: center;
  }
 
+ .modal .modal-dialog {
+   width: 90%;
+
+ }
+
+ .modal p {
+   background-color: #f5f5f5;
+
+ }
+ .modal-header {
+   background-color: #f5f5f5;
+
+ }
+
+ .modal-dialog .modal-footer {
+   background-color: #f5f5f5;
+
+ }
+ .modal .modal-body {
+   overflow-y: auto;
+   background-color: #f5f5f5;
+  //  color: #646464;
+   font-weight: 300;
+   margin: 0 0 0.5em 0;
+   line-height: 1.5em;
+   letter-spacing: -0.035em;
+
+ }
+ input[type="submit"],
+ .button {
+   background-color: #6A9D9D;
+   color: white;
+   border-radius: 6px;
+    border-style: none;
+ }
+
+ input[type="submit"]:hover,
+ input[type="reset"]:hover,
+ input[type="button"]:hover,
+ .button:hover {
+   background-color: #337ab7;
+ }
+
+ input[type="submit"]:active,
+ input[type="reset"]:active,
+ input[type="button"]:active,
+ .button:active {
+   background-color: #337ab7;
+ }
 
 
  .table-hover {
@@ -58,7 +137,24 @@ body {
   margin-right:auto;
   width: 60%;
 }
-.dropdown {text-align:center;}
+.dropdown {
+  text-align:center;
+}
+
+.dropdownLeft {
+  text-align:left;
+  width: 50%;
+  position:relative;
+}
+
+.dropdownRight {
+  text-align:right;
+  width: 50%;
+  position:relative;
+}
+
+
+
  .button,  .dropdown-menu {margin:10px auto}
  .dropdown-menu {width:200px; left:50%; margin-left:-100px;}
 #id1.dropdown-menu {font-size: 25px;}

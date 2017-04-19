@@ -1,0 +1,42 @@
+
+<%= form_for :map, url: map_index_path do |f| %>
+  <% if @map.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@map.errors.count, "error") %> prohibited
+      this article from being saved:
+    </h2>
+    <ul>
+      <% @map.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+
+    <p align="center">
+      <%= f.label :Data_Point_1%>
+      <%= f.text_field :mapfrom_id %>
+    </p>
+    <p align="center">
+
+      <%= f.hidden_field :fromVersionName, :value => "123"%>
+    </p>
+
+    <p align="center">
+
+      <%= f.hidden_field :toVersionName, :value => "123"%>
+    </p>
+
+    <p align="center">
+      <%= f.label :Data_Point_2%>
+      <%= f.text_field :mapto_id %>
+    </p>
+    <br>
+    <p align="center">
+      <%= f.submit "Create Data Point Mapping"%>
+    </p>
+
+<% end %>

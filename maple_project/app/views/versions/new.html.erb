@@ -2,13 +2,50 @@
 
 <div class = "jumbotron">
   <h2 align="center">Add a new version to System "<%= @system.System_Name %>" below</h2>
+
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <a href="#" data-dismiss="alert" class="close">×</a>
+      <ul>
+        <li>
+          <%= value %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
   <br>
 
   <%= form_for([@system, @system.versions.build]) do |f| %>
+
+  <% if @version.errors.any? %>
+  <div id="error_explanation">
+    <h2 style="color:red;">
+      <%= pluralize(@version.errors.count, "error") %> prohibited
+      this version from being saved:
+    </h2>
+    <ul style="color:red;">
+      <% @version.errors.full_messages.each do |msg| %>
+        <li style="color:red;"><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+
+
+
+
     <p align="center">
       <%= f.label :Version_Name %><br>
       <%= f.text_field :Version_Name %>
     </p>
+
+    <p align="center">
+      <%= f.check_box :active %> Active<br />
+    </p>
+
+
     <br>
     <p align="center">
       <%= f.submit %>
@@ -16,7 +53,7 @@
   <% end %>
 
   <br>
-  <br>
+
   <p align="center"><%= link_to 'List of Versions for this system', system_path(@system) %></p>
 </div>
 </body>

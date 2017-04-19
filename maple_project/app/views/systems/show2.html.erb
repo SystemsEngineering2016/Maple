@@ -1,0 +1,28 @@
+<body>
+
+<div class = "jumbotron">
+
+    <h1 align="center"> Versions of "<%= best_in_place @system, :System_Name %> "</h2>
+
+    <p align="center"> Select a version to map</p>
+    <table class="table table-hover"align="center" width="80%">
+      <br>
+      <tr>
+      </tr>
+
+      <% @system.versions.each do |version| %>
+        <tr>
+            <td><%= link_to version.Version_Name,  display_version_path(version, :myID2 => params[:myID2])%></td>
+        </tr>
+      <% end %>
+    </table>
+
+    <br>
+    <br>
+
+
+    <!-- <h2 align="center">Add a new version to system <%= @system.System_Name %> below</h2>
+    <%= render 'versions/form' %>
+    <br> -->
+</div>
+</body>

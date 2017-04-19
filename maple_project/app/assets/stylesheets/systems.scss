@@ -3,3 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+div.scrollWrapper{
+
+  height:400px;
+  width:800px;
+  margin-left: auto ;
+margin-right: auto ;
+  overflow:scroll;
+}
