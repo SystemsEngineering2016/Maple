@@ -12,4 +12,4 @@ The web application was developed using Ruby on Rails as its primary back-end fr
 - The user will be able to define and edit data points for a data dictionary that they are editing.
 
 # How to deploy maple?
-Maple is a rails webapp project. 
+Maple is a rails webapp project. The maple <a href="http://students.cs.ucl.ac.uk/2016/group33/SystemManual.pdf">system manual</a> can be used to deploy Maple. A <a href="http://students.cs.ucl.ac.uk/2016/group33/UserManual.pdf">user manual</a> is also available to guide new users through the main functionalites of the application.
